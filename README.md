@@ -2,6 +2,14 @@
 A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
 error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
 
+<p align="center">
+    <a href="https://travis-ci.org/fs-opensource/hapi-dev-errors"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fs-opensource/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
+    <a href="https://snyk.io/test/github/fs-opensource/hapi-dev-errors"><img src="https://snyk.io/test/github/fs-opensource/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/fs-opensource/hapi-dev-errors" style="max-width:100%;"></a>
+    <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://camo.githubusercontent.com/5eed05045c5bbe5ba8619779fa5cb790be4e160e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f686170692d67656f2d6c6f636174652e737667" alt="dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/dev-errors.svg" style="max-width:100%;"></a>
+</p>
+
+
+
 ![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
 
 ## Requirements
