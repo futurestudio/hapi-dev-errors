@@ -1,34 +1,33 @@
 {
-    "name": "hapi-dev-errors",
-    "description": "Return better error details and skip the look at command line to catch the issue.",
-    "version": "0.0.0",
-    "author": "Future Studio <info@futurestud.io>",
-    "bugs": {
-        "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
-    },
-    "dependencies": {
-        "vision": "~4.1.1"
-    },
-    "devDependencies": {
-        "code": "~4.0.0",
-        "hapi": "~16.3.0",
-        "lab": "~13.1.0"
-    },
-    "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
-    "keywords": [
-        "hapi",
-        "hapijs",
-        "plugin",
-        "error",
-        "errors"
-    ],
-    "license": "MIT",
-    "main": "lib/index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fs-opensource/hapi-dev-errors.git"
-    },
-    "scripts": {
-        "test": "lab --assert code --leaks --coverage"
-    }
+  "name": "hapi-dev-errors",
+  "description": "Return better error details and skip the look at command line to catch the issue.",
+  "version": "0.0.0",
+  "author": "Future Studio <info@futurestud.io>",
+  "bugs": {
+    "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "code": "~4.1.0",
+    "hapi": "~16.4.3",
+    "lab": "~14.0.1"
+  },
+  "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
+  "keywords": [
+    "developer",
+    "error",
+    "errors",
+    "hapi",
+    "hapijs",
+    "plugin"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fs-opensource/hapi-dev-errors.git"
+  },
+  "scripts": {
+    "test": "lab --assert code --leaks --coverage"
+  }
 }
