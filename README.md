@@ -2,6 +2,7 @@
 A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the 
 error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
 
+![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
 
 ## Requirements
 The plugin is written in ES2015, please use **Node.js v4 or later**.
