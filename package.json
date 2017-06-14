@@ -8,6 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "boom": "~5.1.0",
     "code": "~4.1.0",
     "hapi": "~16.4.3",
     "lab": "~14.0.1"
