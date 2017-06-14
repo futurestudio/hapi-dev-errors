@@ -1,5 +1,5 @@
 # hapi dev errors
-A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the 
+A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
 error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
 
 ![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
@@ -14,6 +14,9 @@ Add `hapi-dev-errors` as a dependency to your project:
 ```bash
 npm i -S hapi-dev-errors
 # you’re using NPM shortcuts to (i)nstall and (-S)ave the module as a dependency
+
+# NPM v5 users, please this way
+npm i hapi-dev-errors
 ```
 
 
@@ -57,22 +60,22 @@ server.register({
     if (err) {
         // handle plugin registration error
     }
-    
+
     // do the heavy lifting :)
 })
 ```
 
 
 ## Provided Values for our custom error view
-`hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to 
-use your personal error template and not the default one shipped with `hapi-dev-errors`. In case you pass a string 
+`hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to
+use your personal error template and not the default one shipped with `hapi-dev-errors`. In case you pass a string
 value for the template name, the view will be rendered with `reply.view(template, errorData).code(500)`.
 
 Available properties to use in your custom error view:
 
 - `title`: error title like `Internal Server Error`
 - `statusCode`: HTTP response status code (always 500)
-- `message`: error message, like `Uncaught error: reply.view(...).test is not a function` 
+- `message`: error message, like `Uncaught error: reply.view(...).test is not a function`
 - `method`: HTTP request method, like `GET`
 - `url`: URL request path, like `/signup`
 - `payload`: HTTP request payload, only available for HTTP methods other than `GET`
