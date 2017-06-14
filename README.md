@@ -66,7 +66,7 @@ server.register({
 ```
 
 
-## Provided Values for our custom error view
+## Provided Values for Your Custom Error View
 `hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to
 use your personal error template and not the default one shipped with `hapi-dev-errors`. In case you pass a string
 value for the template name, the view will be rendered with `reply.view(template, errorData).code(500)`.
