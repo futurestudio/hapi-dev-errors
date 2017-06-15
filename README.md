@@ -1,6 +1,6 @@
-# hapi dev errors
-A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
-error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
+<p align="center">
+  <img height="256" src="https://github.com/fs-opensource/hapi-dev-errors/blob/master/media/hapi-dev-errors.png?raw=true" alt="hapi-dev-errors logo">
+</p>
 
 <p align="center">
     <a href="https://travis-ci.org/fs-opensource/hapi-dev-errors"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fs-opensource/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
@@ -8,7 +8,9 @@ error stacktrace within the browser and you can skip the extra look at your comm
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="hapi-dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/hapi-dev-errors.svg" style="max-width:100%;"></a>
 </p>
 
-
+## Introduction
+A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
+error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
 
 ![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
 
