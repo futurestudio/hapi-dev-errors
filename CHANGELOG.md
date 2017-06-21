@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.x.x (2017-xx-xx)
+- `update` preview of default error view to show updated layout
+
 ## Version 1.1.0 (2017-06-14)
 - `optimize` plugin registration: abort early if `showErrors` is false, don’t get the template from filesystem and don’t hook the the request lifecycle extension point
 
