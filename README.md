@@ -68,7 +68,7 @@ server.register({
 The following plugin options allow you to customize the default behavior of `hapi-dev-errors`:
 
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
-- **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error over `hapi-dev-error`’s default handling
+- **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error instead of using `hapi-dev-error`’s default handling
 - **template**: `(string)`, no default — provide the template name that you want to render with `reply.view(template, errorData)`
 
 ```js
