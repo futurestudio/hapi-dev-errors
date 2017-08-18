@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="column">
+        <br>
+        <h2>
+            {{message}}
+        </h2>
+        <p>
+            <strong>Called URL</strong>
+            <br>
+            <code>
+                {{method}} {{url}}
+            </code>
+        </p>
+
+        {{#if stacktrace}}
+            <pre>
+                <code>
+                    {{~ stacktrace ~}}
+                </code>
+            </pre>
+        {{/if}}
+
+
+        <p>
+            <strong>Headers</strong>
+        </p>
+        {{#if headers}}
+            <pre>
+                <code>
+                    {{#each headers as |value key|}}
+                        {{~ key ~}}: &nbsp;{{~ value ~}}
+                        <br>
+                    {{/each}}
+                </code>
+            </pre>
+        {{/if}}
+
+
+    </div>
+</div>
