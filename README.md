@@ -14,6 +14,13 @@ error stacktrace within the browser and you can skip the extra look at your comm
 
 ![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
 
+You can choose [Youch](https://github.com/poppinss/youch) to handle your error reporting by using the `useYouch: true` 
+[option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options). `hapi-dev-errors` integrates 
+seamlessly with Youch and delegates the error handling, if activated. The view will look like this:
+
+![hapi-dev-errors Youch error view](media/hapi-dev-errors-useYouch-view.png)
+
+
 ## Requirements
 The plugin is written in ES2015, please use **Node.js v4 or later**.
 
@@ -29,6 +36,10 @@ npm i -S hapi-dev-errors
 npm i hapi-dev-errors
 ```
 
+## Examples
+Check out the [examples](https://github.com/fs-opensource/hapi-dev-errors/tree/master/examples) directory and get
+an impression on how to configure `hapi-dev-errors` with the individual plugins options and how to customize the 
+error view. 
 
 ## Usage
 **`hapi-dev-errors` is disabled by default to avoid leaking sensitive error details during production.**
@@ -57,6 +68,7 @@ server.register({
 The following plugin options allow you to customize the default behavior of `hapi-dev-errors`:
 
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
+- **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error over `hapi-dev-error`’s default handling
 - **template**: `(string)`, no default — provide the template name that you want to render with `reply.view(template, errorData)`
 
 ```js
@@ -74,7 +86,6 @@ server.register({
     // do the heavy lifting :)
 })
 ```
-
 
 ## Provided Values for Your Custom Error View
 `hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to
