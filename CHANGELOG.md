@@ -3,6 +3,7 @@
 ## Version 1.2.0 (2017-08-18)
 - `add` new option `useYouch` (boolean) to delegate the error handling to Youch and use its view
 - `add` preview of Youch’s error view in the readme introduction
+- `add` examples for the default, Youch and custom templates. Located within the `examples` directory
 - `update` preview of default error view to show updated layout
 - `update` highlight JS files in stacktrace (via RegEx) on default layout
 
