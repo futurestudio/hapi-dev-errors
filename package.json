@@ -6,12 +6,16 @@
   "bugs": {
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "hoek": "~4.2.0",
+    "youch": "~2.0.5"
+  },
   "devDependencies": {
     "boom": "~5.1.0",
     "code": "~4.1.0",
     "hapi": "~16.4.3",
-    "lab": "~14.0.1"
+    "lab": "~14.0.1",
+    "vision": "^4.1.1"
   },
   "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
   "keywords": [
