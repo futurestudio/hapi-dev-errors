@@ -99,7 +99,7 @@ Available properties to use in your custom error view:
 - `message`: error message, like `Uncaught error: reply.view(...).test is not a function`
 - `method`: HTTP request method, like `GET`
 - `url`: URL request path, like `/signup`
-- `headers`: HTTP request headers object, in key-value format `GET`
+- `headers`: HTTP request headers object, in key-value format
 - `payload`: HTTP request payload, only available for HTTP methods other than `GET`, in key-value format
 - `stacktrace`: error stacktrace
 
