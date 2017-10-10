@@ -5,8 +5,7 @@ const Code = require('code');
 const Boom = require('boom');
 const Hapi = require('hapi');
 
-const server = new Hapi.Server();
-server.connection({ port: 3000 });
+let server; 
 
 const lab = exports.lab = Lab.script();
 const experiment = lab.experiment;
@@ -14,7 +13,10 @@ const test = lab.test;
 
 experiment('hapi-dev-error register plugin', () => {
 
-    lab.before(done => {
+    lab.beforeEach(done => {
+
+        server = new Hapi.Server();
+        server.connection({ port: 3000 });
 
         // fake dev env, no process.env.NODE_ENV defined
 
@@ -64,6 +66,38 @@ experiment('hapi-dev-error register plugin', () => {
             method: 'GET',
             handler: (request, reply) => {
                 reply(Boom.badImplementation('server error'))
+            }
+        };
+
+        server.route(routeOptions);
+
+        const options = {
+            url: routeOptions.path,
+            method: routeOptions.method,
+            headers: {
+                'accept': 'application/json'
+            },
+        };
+
+        server.inject(options, response => {
+
+            const payload = JSON.parse(response.payload || '{}');
+
+            Code.expect(response.statusCode).to.equal(500);
+            Code.expect(payload.stacktrace).to.exist()
+            Code.expect(payload.url).to.equal(routeOptions.path)
+            Code.expect(payload.method).to.equal(routeOptions.method)
+
+            done();
+        });
+    });
+
+    test('test when the error is from a rejected Promise', done => {
+        const routeOptions = {
+            path: '/showPromiseError',
+            method: 'GET',
+            handler: (request, reply) => {
+                reply(Promise.reject(new Error('server error')))
             }
         };
 
