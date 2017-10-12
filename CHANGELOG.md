@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 1.3.0 (2017-10-12)
+- `add` handling of promise rejections, like `reply(Promise.reject(new Error('')))` (Thank you [Tafari](https://github.com/tafarij))
+
 ## Version 1.2.0 (2017-08-18)
 - `add` new option `useYouch` (boolean) to delegate the error handling to Youch and use its view
 - `add` preview of Youch’s error view in the readme introduction
