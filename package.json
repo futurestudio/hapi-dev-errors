@@ -29,6 +29,6 @@
     "url": "git+https://github.com/fs-opensource/hapi-dev-errors.git"
   },
   "scripts": {
-    "test": "lab --assert code --leaks --coverage --lint --lint-fix"
+    "test": "lab --assert code --leaks --coverage --lint"
   }
 }
