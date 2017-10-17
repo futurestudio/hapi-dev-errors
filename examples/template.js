@@ -7,46 +7,48 @@ const server = new Hapi.Server()
 
 // add server’s connection information
 server.connection({
-    host: 'localhost',
-    port: 3000
+  host: 'localhost',
+  port: 3000
 })
 
 // register plugins to server instance
-server.register([
+server
+  .register([
     {
-        register: require('vision')
+      register: require('vision')
     },
     {
-        register: require('../'),
-        options: {
-            showErrors: process.env.NODE_ENV !== 'production',
-            template: 'error',
-            useYouch: true      // this will be ignored, option 'template' > 'useYouch'
-        }
+      register: require('../'),
+      options: {
+        showErrors: process.env.NODE_ENV !== 'production',
+        template: 'error',
+        useYouch: true // this will be ignored, option 'template' > 'useYouch'
+      }
     }
-]).then(() => {
-
+  ])
+  .then(() => {
     server.views({
-        engines: {
-            html: require('handlebars')
-        },
-        path: __dirname + '/views',
-        layout: 'layout',
-        isCached: process.env.NODE_ENV !== 'production'
+      engines: {
+        html: require('handlebars')
+      },
+      path: __dirname + '/views',
+      layout: 'layout',
+      isCached: process.env.NODE_ENV !== 'production'
     })
 
     server.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, reply) => {
-            reply.notAvailable()
-        }
+      method: 'GET',
+      path: '/',
+      handler: (request, reply) => {
+        reply.notAvailable()
+      }
     })
 
     // start your server
     server.start().then(() => {
-        console.log('Server running at: ' + server.info.uri)
+      console.log('Server running at: ' + server.info.uri)
     })
-}).catch(err => {
+  })
+  .catch(err => {
     throw err
-})
+  })
