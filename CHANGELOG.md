@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 1.3.1 (2017-10-17)
+- `remove` editor config for code formatting (`.editorconfig` file)
+- `add` eslint configuration via `.eslintrc.json`
+- `add` required engine in `package.json`: `>=4.0.0`. This package required Node.js v4+ with release 1.0. This setting makes sure that NPM follows this dependency.
+
 ## Version 1.3.0 (2017-10-12)
 - `add` handling of promise rejections, like `reply(Promise.reject(new Error('')))` (Thank you [Tafari](https://github.com/tafarij))
 
