@@ -21,7 +21,7 @@
     "node": ">=4.0.0"
   },
   "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
-  "keywords": [ "developer", "error", "errors", "hapi", "hapijs", "plugin" ],
+  "keywords": ["developer", "error", "errors", "hapi", "hapijs", "plugin"],
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {
@@ -29,6 +29,6 @@
     "url": "git+https://github.com/fs-opensource/hapi-dev-errors.git"
   },
   "scripts": {
-    "test": "lab --assert code --leaks --coverage"
+    "test": "lab --assert code --leaks --coverage --lint --lint-fix"
   }
 }
