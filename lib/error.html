@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>%title% (%statusCode%)</title>
 
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 </head>
+
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <br>
-            <h2>%title% (%statusCode%)</h2>
-
-            <p>
-                <strong>Request Method & Path</strong>
+    <div class="container">
+        <div class="row">
+            <div class="column">
                 <br>
-                <code>
-                    %method% %url%
-                </code>
-            </p>
+                <h2>%title% (%statusCode%)</h2>
 
-            <p>
-                <strong>Error Details</strong>
-                <br>
-                %message%
-            </p>
+                <p>
+                    <strong>Request Method & Path</strong>
+                    <br>
+                    <code>%method% %url%</code>
+                </p>
 
-            <pre>
+                <p>
+                    <strong>Error Details</strong>
+                    <br> %message%
+                </p>
+
+                <pre>
                 <code>%stacktrace%</code>
             </pre>
 
+            </div>
         </div>
     </div>
-</div>
 
 </body>
+
 </html>

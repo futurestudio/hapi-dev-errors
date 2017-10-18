@@ -13,6 +13,10 @@
   "devDependencies": {
     "boom": "~5.1.0",
     "code": "~4.1.0",
+    "eslint": "~4.9.0",
+    "eslint-config-hapi": "~10.1.0",
+    "eslint-plugin-hapi": "~4.0.0",
+    "handlebars": "~4.0.11",
     "hapi": "~16.6.2",
     "lab": "~14.3.1",
     "vision": "~4.1.1"

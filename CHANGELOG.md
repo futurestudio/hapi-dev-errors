@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 1.3.2 (2017-10-18)
+- `update` code formatting to ESLint styling for hapi, based on `eslint-config-hapi`
+- `add` Handlebars as devDependency for template example
+
 ## Version 1.3.1 (2017-10-17)
 - `remove` editor config for code formatting (`.editorconfig` file)
 - `add` eslint configuration via `.eslintrc.json`

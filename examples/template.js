@@ -1,15 +1,16 @@
-'use strict'
+'use strict';
 
-const Hapi = require('hapi')
+const Hapi = require('hapi');
+const Path = require('path');
 
 // create new server instance
-const server = new Hapi.Server()
+const server = new Hapi.Server();
 
 // add server’s connection information
 server.connection({
     host: 'localhost',
     port: 3000
-})
+});
 
 // register plugins to server instance
 server
@@ -27,28 +28,32 @@ server
         }
     ])
     .then(() => {
+
         server.views({
             engines: {
                 html: require('handlebars')
             },
-            path: __dirname + '/views',
+            path: Path.resolve(__dirname, '/views'),
             layout: 'layout',
             isCached: process.env.NODE_ENV !== 'production'
-        })
+        });
 
         server.route({
             method: 'GET',
             path: '/',
             handler: (request, reply) => {
-                reply.notAvailable()
+
+                reply.notAvailable();
             }
-        })
+        });
 
         // start your server
         server.start().then(() => {
-            console.log('Server running at: ' + server.info.uri)
-        })
+
+            console.log('Server running at: ' + server.info.uri);
+        });
     })
     .catch((err) => {
-        throw err
-    })
+
+        throw err;
+    });
