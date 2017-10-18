@@ -1,7 +1,7 @@
 {
   "name": "hapi-dev-errors",
   "description": "Return better error details and skip the look at command line to catch the issue.",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
