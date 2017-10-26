@@ -5,54 +5,43 @@ const Code = require('code')
 const Hapi = require('hapi')
 
 const server = new Hapi.Server()
-server.connection({ port: 3000 })
 
-const lab = (exports.lab = Lab.script())
-const experiment = lab.experiment
-const test = lab.test
+const { experiment, test, before } = (exports.lab = Lab.script())
 
 experiment('hapi-dev-error register plugin', () => {
-    lab.before((done) => {
+  before(async () => {
     // fake production env
-        process.env.NODE_ENV = 'prod'
+    process.env.NODE_ENV = 'prod'
 
-        server.register(
-            {
-                register: require('../lib/index'),
-                options: {
-                    showErrors: process.env.NODE_ENV !== 'prod'
-                }
-            },
-            (err) => {
-                done(err)
-            }
-        )
+    await server.register({
+      plugin: require('../lib/index'),
+      options: {
+        showErrors: process.env.NODE_ENV !== 'prod'
+      }
     })
+  })
 
-    test('test if the plugin is disabled in production', (done) => {
-        const routeOptions = {
-            path: '/showErrorsIsFalse',
-            method: 'GET',
-            handler: (request, reply) => {
-                reply(new Error('failure'))
-            }
-        }
+  test('test if the plugin is disabled in production', async () => {
+    const routeOptions = {
+      path: '/showErrorsIsFalse',
+      method: 'GET',
+      handler: () => {
+        return new Error('failure')
+      }
+    }
 
-        server.route(routeOptions)
+    server.route(routeOptions)
 
-        const options = {
-            url: routeOptions.path,
-            method: routeOptions.method
-        }
+    const options = {
+      url: routeOptions.path,
+      method: routeOptions.method
+    }
 
-        server.inject(options, (response) => {
-            const payload = JSON.parse(response.payload || '{}')
+    const response = await server.inject(options)
+    const payload = JSON.parse(response.payload || '{}')
 
-            Code.expect(response.statusCode).to.equal(500)
-            Code.expect(payload.message).to.equal('An internal server error occurred')
-            Code.expect(payload.error).to.equal('Internal Server Error')
-
-            done()
-        })
-    })
+    Code.expect(response.statusCode).to.equal(500)
+    Code.expect(payload.message).to.equal('An internal server error occurred')
+    Code.expect(payload.error).to.equal('Internal Server Error')
+  })
 })

@@ -7,115 +7,98 @@ const Hapi = require('hapi')
 
 let server
 
-const lab = (exports.lab = Lab.script())
-const experiment = lab.experiment
-const test = lab.test
+const { experiment, test, beforeEach } = (exports.lab = Lab.script())
+const expect = Code.expect
 
 experiment('hapi-dev-error register plugin', () => {
-    lab.beforeEach((done) => {
-        server = new Hapi.Server()
-        server.connection({ port: 3000 })
+  beforeEach(async () => {
+    server = new Hapi.Server()
 
-        // fake dev env, no process.env.NODE_ENV defined
-
-        server.register(
-            {
-                register: require('../lib/index'),
-                options: {
-                    showErrors: process.env.NODE_ENV !== 'production'
-                }
-            },
-            (err) => {
-                done(err)
-            }
-        )
+    // fake dev env, no process.env.NODE_ENV defined
+    await server.register({
+      plugin: require('../lib/index'),
+      options: {
+        showErrors: process.env.NODE_ENV !== 'production'
+      }
     })
+  })
 
-    test('test if the plugin is enabled in development for web requests', (done) => {
-        const routeOptions = {
-            path: '/showErrorsForWeb',
-            method: 'GET',
-            handler: (request, reply) => {
-                reply(Boom.badImplementation('server error'))
-            }
-        }
+  test('test if the plugin is enabled in development for web requests', async () => {
+    const routeOptions = {
+      path: '/showErrorsForWeb',
+      method: 'GET',
+      handler: () => {
+        return Boom.badImplementation('a fancy server error')
+      }
+    }
 
-        server.route(routeOptions)
+    server.route(routeOptions)
 
-        const options = {
-            url: routeOptions.path,
-            method: routeOptions.method
-        }
+    const options = {
+      url: routeOptions.path,
+      method: routeOptions.method
+    }
 
-        server.inject(options, (response) => {
-            const payload = response.payload
+    const response = await server.inject(options)
+    const payload = response.payload
 
-            Code.expect(response.statusCode).to.equal(500)
-            Code.expect(payload).to.startWith('<!DOCTYPE html>')
+    expect(response.statusCode).to.equal(500)
+    expect(payload).to.startWith('<!DOCTYPE html>')
+  })
 
-            done()
-        })
-    })
+  test('test if the plugin is enabled in development for JSON/REST requests', async () => {
+    const routeOptions = {
+      path: '/showErrorsForREST',
+      method: 'GET',
+      handler: () => {
+        return Boom.badImplementation('JSON/REST server error')
+      }
+    }
 
-    test('test if the plugin is enabled in development for JSON/REST requests', (done) => {
-        const routeOptions = {
-            path: '/showErrorsForREST',
-            method: 'GET',
-            handler: (request, reply) => {
-                reply(Boom.badImplementation('server error'))
-            }
-        }
+    server.route(routeOptions)
 
-        server.route(routeOptions)
+    const options = {
+      url: routeOptions.path,
+      method: routeOptions.method,
+      headers: {
+        accept: 'application/json'
+      }
+    }
 
-        const options = {
-            url: routeOptions.path,
-            method: routeOptions.method,
-            headers: {
-                accept: 'application/json'
-            }
-        }
+    const response = await server.inject(options)
+    const payload = JSON.parse(response.payload || '{}')
 
-        server.inject(options, (response) => {
-            const payload = JSON.parse(response.payload || '{}')
+    expect(response.statusCode).to.equal(500)
+    expect(payload.stacktrace).to.exist()
+    expect(payload.url).to.equal(routeOptions.path)
+    expect(payload.method).to.equal(routeOptions.method)
+  })
 
-            Code.expect(response.statusCode).to.equal(500)
-            Code.expect(payload.stacktrace).to.exist()
-            Code.expect(payload.url).to.equal(routeOptions.path)
-            Code.expect(payload.method).to.equal(routeOptions.method)
+  test('test when the error is from a rejected Promise', async () => {
+    const routeOptions = {
+      path: '/showPromiseError',
+      method: 'GET',
+      handler: () => {
+        return Promise.reject(new Error('server error'))
+      }
+    }
 
-            done()
-        })
-    })
+    server.route(routeOptions)
 
-    test('test when the error is from a rejected Promise', (done) => {
-        const routeOptions = {
-            path: '/showPromiseError',
-            method: 'GET',
-            handler: (request, reply) => {
-                reply(Promise.reject(new Error('server error')))
-            }
-        }
+    const options = {
+      url: routeOptions.path,
+      method: routeOptions.method,
+      headers: {
+        accept: 'application/json'
+      }
+    }
 
-        server.route(routeOptions)
+    const response = await server.inject(options)
+    const payload = JSON.parse(response.payload || '{}')
 
-        const options = {
-            url: routeOptions.path,
-            method: routeOptions.method,
-            headers: {
-                accept: 'application/json'
-            }
-        }
-
-        server.inject(options, (response) => {
-            const payload = JSON.parse(response.payload || '{}')
-
-            Code.expect(response.statusCode).to.equal(500)
-            Code.expect(payload.stacktrace).to.exist()
-            Code.expect(payload.url).to.equal(routeOptions.path)
-            Code.expect(payload.method).to.equal(routeOptions.method)
-
-            done()
-        })
-    })
+    expect(response.statusCode).to.equal(500)
+    expect(payload.stacktrace).to.exist()
+    expect(payload.url).to.equal(routeOptions.path)
+    expect(payload.method).to.equal(routeOptions.method)
+  })
 })

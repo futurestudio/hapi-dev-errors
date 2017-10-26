@@ -7,28 +7,21 @@
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
   },
   "dependencies": {
-    "hoek": "~4.2.0",
+    "hoek": "~5.0.0",
     "youch": "~2.0.5"
   },
   "devDependencies": {
-    "boom": "~5.1.0",
-    "code": "~4.1.0",
-    "hapi": "~16.6.2",
-    "lab": "~14.3.1",
+    "boom": "~6.0.0",
+    "code": "~5.1.0",
+    "hapi": "~17.0.0-rc9",
+    "lab": "~15.1.0",
     "vision": "~4.1.1"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
-  "keywords": [
-    "developer",
-    "error",
-    "errors",
-    "hapi",
-    "hapijs",
-    "plugin"
-  ],
+  "keywords": ["developer", "error", "errors", "hapi", "hapijs", "plugin"],
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {
