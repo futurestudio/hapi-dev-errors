@@ -3,22 +3,8 @@
     "es6": true,
     "node": true
   },
-  "extends": "eslint:recommended",
+  "extends": "hapi",
   "parserOptions": {
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "impliedStrict": true,
-      "classes": true
-    }
-  },
-  "rules": {
-    "no-console": 0,
-    "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "always"],
-    "space-before-function-paren": ["error", "always"],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "ecmaVersion": 8
   }
 }
