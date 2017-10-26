@@ -3,7 +3,7 @@
     "es6": true,
     "node": true
   },
-  "extends": "hapi",
+  "extends": "standard",
   "parserOptions": {
     "ecmaVersion": 8
   }
