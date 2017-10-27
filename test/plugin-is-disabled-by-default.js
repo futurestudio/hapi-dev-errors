@@ -1,59 +1,42 @@
-'use strict';
+'use strict'
 
-const Lab = require('lab');
-const Code = require('code');
-const Hapi = require('hapi');
+const Lab = require('lab')
+const Code = require('code')
+const Hapi = require('hapi')
 
-const server = new Hapi.Server();
-server.connection({ port: 3000 });
+const server = new Hapi.Server()
 
-const lab = (exports.lab = Lab.script());
-const experiment = lab.experiment;
-const test = lab.test;
+const { experiment, test, before } = (exports.lab = Lab.script())
 
-experiment('hapi-dev-error register plugin', () => {
+experiment('plugin-is-disabled-by-default,', () => {
+  before(async () => {
+    await server.register({
+      plugin: require('../lib/index'),
+      options: {}
+    })
+  })
 
-    lab.before((done) => {
+  test('test if the plugin is disabled by default', async () => {
+    const routeOptions = {
+      path: '/no-options',
+      method: 'GET',
+      handler: () => {
+        return new Error('failure')
+      }
+    }
 
-        server.register(
-            {
-                register: require('../lib/index'),
-                options: {}
-            },
-            (err) => {
+    server.route(routeOptions)
 
-                done(err);
-            }
-        );
-    });
+    const options = {
+      url: routeOptions.path,
+      method: routeOptions.method
+    }
 
-    test('test if the plugin is disabled by default', (done) => {
+    const response = await server.inject(options)
+    const payload = JSON.parse(response.payload || '{}')
 
-        const routeOptions = {
-            path: '/no-options',
-            method: 'GET',
-            handler: (request, reply) => {
-
-                reply(new Error('failure'));
-            }
-        };
-
-        server.route(routeOptions);
-
-        const options = {
-            url: routeOptions.path,
-            method: routeOptions.method
-        };
-
-        server.inject(options, (response) => {
-
-            const payload = JSON.parse(response.payload || '{}');
-
-            Code.expect(response.statusCode).to.equal(500);
-            Code.expect(payload.message).to.equal('An internal server error occurred');
-            Code.expect(payload.error).to.equal('Internal Server Error');
-
-            done();
-        });
-    });
-});
+    Code.expect(response.statusCode).to.equal(500)
+    Code.expect(payload.message).to.equal('An internal server error occurred')
+    Code.expect(payload.error).to.equal('Internal Server Error')
+  })
+})

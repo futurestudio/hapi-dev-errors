@@ -4,29 +4,31 @@ const Lab = require('lab')
 const Code = require('code')
 const Hapi = require('hapi')
 
-const server = new Hapi.Server()
+let server
 
 const { experiment, test, before } = (exports.lab = Lab.script())
+const expect = Code.expect
 
 experiment('hapi-dev-error register plugin', () => {
   before(async () => {
-    // fake production env
-    process.env.NODE_ENV = 'prod'
+    server = new Hapi.Server()
 
+    // fake dev env, no process.env.NODE_ENV defined
     await server.register({
       plugin: require('../lib/index'),
       options: {
-        showErrors: process.env.NODE_ENV !== 'prod'
+        showErrors: process.env.NODE_ENV !== 'production',
+        useYouch: true
       }
     })
   })
 
-  test('test if the plugin is disabled in production', async () => {
+  test('test if the plugin uses Youch', async () => {
     const routeOptions = {
-      path: '/showErrorsIsFalse',
+      path: '/use-youch',
       method: 'GET',
       handler: () => {
-        return new Error('failure')
+        return new Error('show this error with Youch')
       }
     }
 
@@ -38,10 +40,9 @@ experiment('hapi-dev-error register plugin', () => {
     }
 
     const response = await server.inject(options)
-    const payload = JSON.parse(response.payload || '{}')
+    const payload = response.payload
 
-    Code.expect(response.statusCode).to.equal(500)
-    Code.expect(payload.message).to.equal('An internal server error occurred')
-    Code.expect(payload.error).to.equal('Internal Server Error')
+    expect(response.statusCode).to.equal(500)
+    expect(payload).to.startWith('<!DOCTYPE html>')
   })
 })
