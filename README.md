@@ -108,7 +108,7 @@ desired addition to this plugin.
 
 ## Links & Resources
 
-- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 60+ tutorials
+- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 70+ tutorials
 - [Youch](https://github.com/poppinss/youch) - Pretty error reporting for Node.js
 
 ## Contributing
