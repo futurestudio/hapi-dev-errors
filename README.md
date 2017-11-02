@@ -14,15 +14,15 @@ error stacktrace within the browser and you can skip the extra look at your comm
 
 ![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
 
-You can choose [Youch](https://github.com/poppinss/youch) to handle your error reporting by using the `useYouch: true` 
-[option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options). `hapi-dev-errors` integrates 
+You can choose [Youch](https://github.com/poppinss/youch) to handle your error reporting by using the `useYouch: true`
+[option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options). `hapi-dev-errors` integrates
 seamlessly with Youch and delegates the error handling, if activated. The view will look like this:
 
 ![hapi-dev-errors Youch error view](media/hapi-dev-errors-useYouch-view.png)
 
 
 ## Requirements
-The plugin is written in ES2015, please use **Node.js v4 or later**.
+This plugin uses async/await which requires **Node.js v8 or newer**.
 
 
 ## Installation
@@ -38,8 +38,8 @@ npm i hapi-dev-errors
 
 ## Examples
 Check out the [examples](https://github.com/fs-opensource/hapi-dev-errors/tree/master/examples) directory and get
-an impression on how to configure `hapi-dev-errors` with the individual plugins options and how to customize the 
-error view. 
+an impression on how to configure `hapi-dev-errors` with the individual plugins options and how to customize the
+error view.
 
 ## Usage
 **`hapi-dev-errors` is disabled by default to avoid leaking sensitive error details during production.**
@@ -50,16 +50,14 @@ The most straight forward way to register the `hapi-dev-errors` plugin:
 
 ```js
 server.register({
-    register: require('hapi-dev-errors'),
+    plugin: require('hapi-dev-errors'),
     options: {
       showErrors: process.env.NODE_ENV !== 'production'
     }
-  }, err => {
-    if (err) {
-        // handle plugin registration error
-    }
-
+}).then(() => {
     // went smooth like chocolate :)
+}).catch(err => {
+    // handle plugin registration error
 })
 ```
 
@@ -69,34 +67,32 @@ The following plugin options allow you to customize the default behavior of `hap
 
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
 - **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error instead of using `hapi-dev-error`’s default handling
-- **template**: `(string)`, no default — provide the template name that you want to render with `reply.view(template, errorData)`
+- **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
 
 ```js
 server.register({
-    register: require('hapi-dev-errors'),
+    plugin: require('hapi-dev-errors'),
     options: {
         showErrors: process.env.NODE_ENV !== 'production',
         template: 'my-error-view'
     }
-}, err => {
-    if (err) {
-        // handle plugin registration error
-    }
-
-    // do the heavy lifting :)
+}).then(() => {
+    // went smooth like chocolate :)
+}).catch(err => {
+    // handle plugin registration error
 })
 ```
 
 ## Provided Values for Your Custom Error View
 `hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to
 use your personal error template and not the default one shipped with `hapi-dev-errors`. In case you pass a string
-value for the template name, the view will be rendered with `reply.view(template, errorData).code(500)`.
+value for the template name, the view will be rendered with `h.view(template, errorData).code(500)`.
 
 Available properties to use in your custom error view:
 
 - `title`: error title like `Internal Server Error`
 - `statusCode`: HTTP response status code (always 500)
-- `message`: error message, like `Uncaught error: reply.view(...).test is not a function`
+- `message`: error message, like `Uncaught error: h.view(...).test is not a function`
 - `method`: HTTP request method, like `GET`
 - `url`: URL request path, like `/signup`
 - `headers`: HTTP request headers object, in key-value format
