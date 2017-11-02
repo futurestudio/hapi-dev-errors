@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 2.0.0 (2017-11-xx)
+- `update` readme: requirements and examples
+
+## Version 2.0.0-rc.1 (2017-10-27)
+- `update` code to support hapi v17
+- `update` dependencies to newest versions
+
 ## Version 1.3.2 (2017-10-18)
 - `update` code formatting to ESLint styling for hapi, based on `eslint-config-hapi`
 - `add` Handlebars as devDependency for template example
