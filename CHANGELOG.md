@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 2.0.1 (2017-11-06)
+- `update` dependencies to latest stable releases
+- `update` readme
+
 ## Version 2.0.0 (2017-11-06)
 - `update` readme: requirements and examples
 
