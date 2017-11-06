@@ -7,12 +7,12 @@
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
   },
   "dependencies": {
-    "hoek": "~5.0.0",
+    "hoek": "~5.0.2",
     "youch": "~2.0.5"
   },
   "devDependencies": {
     "boom": "~7.1.1",
-    "code": "~5.1.0",
+    "code": "~5.1.2",
     "eslint-config-standard": "~10.2.1",
     "eslint-plugin-import": "~2.8.0",
     "eslint-plugin-node": "~5.2.1",
