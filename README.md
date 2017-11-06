@@ -24,6 +24,9 @@ seamlessly with Youch and delegates the error handling, if activated. The view w
 ## Requirements
 This plugin uses async/await which requires **Node.js v8 or newer**.
 
+### Do you use hapi v16 (or lower)?
+Use the `1.3.2` release of `hapi-dev-errors` with hapi v16. Any later version is only compatible with hapi v17 and later.
+
 
 ## Installation
 Add `hapi-dev-errors` as a dependency to your project:

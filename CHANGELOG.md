@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 2.0.0 (2017-11-xx)
+## Version 2.0.0 (2017-11-06)
 - `update` readme: requirements and examples
 
 ## Version 2.0.0-rc.1 (2017-10-27)
