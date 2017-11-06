@@ -11,17 +11,17 @@
     "youch": "~2.0.5"
   },
   "devDependencies": {
-    "boom": "~6.0.0",
+    "boom": "~7.1.1",
     "code": "~5.1.0",
     "eslint-config-standard": "~10.2.1",
     "eslint-plugin-import": "~2.8.0",
     "eslint-plugin-node": "~5.2.1",
     "eslint-plugin-promise": "~3.6.0",
     "eslint-plugin-standard": "~3.0.1",
-    "hapi": "~17.0.0-rc9",
+    "hapi": "~17.0.1",
     "husky": "~0.14.3",
     "lab": "~15.1.2",
-    "vision": "~5.0.0-rc8"
+    "vision": "~5.1.0"
   },
   "engines": {
     "node": ">=8.0.0"
