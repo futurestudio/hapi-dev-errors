@@ -8,6 +8,17 @@
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="hapi-dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/hapi-dev-errors.svg" style="max-width:100%;"></a>
 </p>
 
+
+------
+
+<p align="center"><sup>Development of this hapi plugin is supported by <a href="https://futurestud.io">Future Studio University 🚀</a></sup>
+<br><b>
+Join the <a href="https://futurestud.io/university">Future Studio University and Skyrocket in Node.js</a></b>
+</p>
+
+------
+
+
 ## Introduction
 A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
 error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
