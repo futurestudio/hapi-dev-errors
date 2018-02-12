@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 2.1.0 (2018-02-12)
+- `add` status code to Youch error and show it in the view
+- `update` example code in readme to async/await
+- `update` examples to fully async/await code
+
 ## Version 2.0.1 (2017-11-06)
 - `update` dependencies to latest stable releases
 - `update` readme
