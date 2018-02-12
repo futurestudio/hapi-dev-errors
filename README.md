@@ -8,7 +8,6 @@
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="hapi-dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/hapi-dev-errors.svg" style="max-width:100%;"></a>
 </p>
 
-
 ------
 
 <p align="center"><sup>Development of this hapi plugin is supported by <a href="https://futurestud.io">Future Studio University 🚀</a></sup>
@@ -73,16 +72,14 @@ Enable the plugin by define a "truthy" value for the `showErrors` option.
 The most straight forward way to register the `hapi-dev-errors` plugin:
 
 ```js
-server.register({
+await server.register({
     plugin: require('hapi-dev-errors'),
     options: {
       showErrors: process.env.NODE_ENV !== 'production'
     }
-}).then(() => {
-    // went smooth like chocolate :)
-}).catch(err => {
-    // handle plugin registration error
 })
+
+// went smooth like chocolate :)
 ```
 
 
@@ -94,17 +91,15 @@ The following plugin options allow you to customize the default behavior of `hap
 - **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
 
 ```js
-server.register({
+await server.register({
     plugin: require('hapi-dev-errors'),
     options: {
         showErrors: process.env.NODE_ENV !== 'production',
         template: 'my-error-view'
     }
-}).then(() => {
-    // went smooth like chocolate :)
-}).catch(err => {
-    // handle plugin registration error
 })
+
+// went smooth like chocolate :)
 ```
 
 ## Provided Values for Your Custom Error View
@@ -132,7 +127,7 @@ desired addition to this plugin.
 
 ## Links & Resources
 
-- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 70+ tutorials
+- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 80+ tutorials
 - [Youch](https://github.com/poppinss/youch) - Pretty error reporting for Node.js
 
 ## Contributing
