@@ -10,9 +10,8 @@ const server = new Hapi.Server({
   port: 3000
 })
 
-// register plugins to server instance
-server
-  .register([
+async function launchIt () {
+  await server.register([
     {
       plugin: require('vision')
     },
@@ -25,29 +24,30 @@ server
       }
     }
   ])
-  .then(() => {
-    server.views({
-      engines: {
-        html: require('handlebars')
-      },
-      path: Path.resolve(__dirname, 'views'),
-      layout: 'layout',
-      isCached: process.env.NODE_ENV !== 'production'
-    })
 
-    server.route({
-      method: 'GET',
-      path: '/',
-      handler: (request, reply) => {
-        reply.notAvailable()
-      }
-    })
-
-    // start your server
-    server.start().then(() => {
-      console.log('Server running at: ' + server.info.uri)
-    })
+  server.views({
+    engines: {
+      html: require('handlebars')
+    },
+    path: Path.resolve(__dirname, 'views'),
+    layout: 'layout',
+    isCached: process.env.NODE_ENV !== 'production'
   })
-  .catch(err => {
+
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+      reply.notAvailable()
+    }
+  })
+
+  try {
+    await server.start()
+    console.log('Server running at: ' + server.info.uri)
+  } catch (err) {
     throw err
-  })
+  }
+}
+
+launchIt()
