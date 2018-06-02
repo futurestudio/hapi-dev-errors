@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 2.2.0 (2018-06-02)
+- `add` JSON response for CLI requests (cURL, Postman, wget) (thank you @pi0)
+
 ## Version 2.1.0 (2018-02-12)
 - `add` status code to Youch error and show it in the view
 - `update` example code in readme to async/await
