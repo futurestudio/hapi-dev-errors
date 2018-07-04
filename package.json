@@ -28,12 +28,13 @@
   },
   "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
   "keywords": [
-    "developer",
-    "error",
-    "errors",
     "hapi",
     "hapijs",
-    "plugin"
+    "plugin",
+    "error",
+    "errors",
+    "debugging",
+    "developer"
   ],
   "license": "MIT",
   "main": "lib/index.js",
