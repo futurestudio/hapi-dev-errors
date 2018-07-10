@@ -39,11 +39,11 @@ This plugin uses async/await which requires **Node.js v8 or newer**.
 Add `hapi-dev-errors` as a dependency to your project:
 
 ```bash
-npm i -S hapi-dev-errors
-# you’re using NPM shortcuts to (i)nstall and (-S)ave the module as a dependency
-
 # NPM v5 users, this way is yours
 npm i hapi-dev-errors
+
+# you’re using NPM v4:
+npm i -S hapi-dev-errors
 ```
 
 
