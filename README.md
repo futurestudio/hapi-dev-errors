@@ -30,6 +30,10 @@ seamlessly with Youch and delegates the error handling, if activated. The view w
 
 ![hapi-dev-errors Youch error view](media/hapi-dev-errors-useYouch-view.png)
 
+You can also print pretty errors to the terminal. This is nice when running your hapi server as an API.
+
+![hapi-dev-errors pretty terminal error](media/hapi-dev-errors-on-terminal.png)
+
 
 ## Requirements
 This plugin uses async/await which requires **Node.js v8 or newer**.
