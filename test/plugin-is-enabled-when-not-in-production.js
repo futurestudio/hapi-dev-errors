@@ -14,12 +14,14 @@ const expect = Code.expect
 experiment('hapi-dev-error register plugin', () => {
   beforeEach(async () => {
     server = new Hapi.Server()
+    // fake dev env
+    process.env.NODE_ENV = 'development'
 
-    // fake dev env, no process.env.NODE_ENV defined
     await server.register({
       plugin: require('../lib/index'),
       options: {
-        showErrors: process.env.NODE_ENV !== 'production'
+        showErrors: process.env.NODE_ENV !== 'production',
+        toTerminal: false
       }
     })
   })
@@ -144,14 +146,15 @@ experiment('hapi-dev-error renders a custom template', () => {
     // fake dev env, no process.env.NODE_ENV defined
     await server.register([
       {
+        plugin: require('vision')
+      },
+      {
         plugin: require('../lib/index'),
         options: {
           showErrors: process.env.NODE_ENV !== 'production',
-          template: 'error'
+          template: 'error',
+          toTerminal: false
         }
-      },
-      {
-        plugin: require('vision')
       }
     ])
 

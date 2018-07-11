@@ -11,12 +11,12 @@ const { experiment, test, before } = (exports.lab = Lab.script())
 experiment('hapi-dev-error register plugin', () => {
   before(async () => {
     // fake production env
-    process.env.NODE_ENV = 'prod'
+    process.env.NODE_ENV = 'production'
 
     await server.register({
       plugin: require('../lib/index'),
       options: {
-        showErrors: process.env.NODE_ENV !== 'prod'
+        showErrors: process.env.NODE_ENV !== 'production'
       }
     })
   })

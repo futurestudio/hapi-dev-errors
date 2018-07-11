@@ -3,6 +3,7 @@
 const Lab = require('lab')
 const Code = require('code')
 const Hapi = require('hapi')
+const Sinon = require('sinon')
 
 let server
 
@@ -13,18 +14,19 @@ experiment('hapi-dev-error register plugin', () => {
   before(async () => {
     server = new Hapi.Server()
 
-    // fake dev env, no process.env.NODE_ENV defined
+    // fake dev env
+    process.env.NODE_ENV = 'develop'
+
     await server.register({
       plugin: require('../lib/index'),
       options: {
         showErrors: process.env.NODE_ENV !== 'production',
-        useYouch: true,
-        toTerminal: false
+        toTerminal: true // default
       }
     })
   })
 
-  test('test if the plugin uses Youch', async () => {
+  test('test if plugin prints to terminal', async () => {
     const routeOptions = {
       path: '/use-youch',
       method: 'GET',
@@ -35,15 +37,18 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
-    const payload = response.payload
+    Sinon.stub(console, 'log')
 
+    const response = await server.inject(request)
     expect(response.statusCode).to.equal(500)
-    expect(payload).to.startWith('<!DOCTYPE html>')
+
+    Sinon.assert.called(console.log)
+
+    console.log.restore()
   })
 })

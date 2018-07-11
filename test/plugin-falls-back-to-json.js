@@ -17,7 +17,8 @@ experiment('hapi-dev-error falls back to json', () => {
     await server.register({
       plugin: require('../lib/index'),
       options: {
-        showErrors: true
+        showErrors: true,
+        toTerminal: false
       }
     })
 
