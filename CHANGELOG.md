@@ -2,7 +2,7 @@
 
 ## Version 2.3.0 (2018-07-12)
 - `add` new plugin option: `toTerminal`, default: `true`
-- `add` pretty error details in the terminal besides the web view. Based on [`youch-terminal`].(https://github.com/poppinss/youch-terminal)
+- `add` pretty error details in the terminal besides the web view. Based on [`youch-terminal`](https://github.com/poppinss/youch-terminal)
 - `update` minor code reformats and restructuring
 
 ## Version 2.2.0 (2018-06-02)
