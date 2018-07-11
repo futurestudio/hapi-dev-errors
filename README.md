@@ -39,10 +39,10 @@ This plugin uses async/await which requires **Node.js v8 or newer**.
 Add `hapi-dev-errors` as a dependency to your project:
 
 ```bash
-# NPM v5 users, this way is yours
+# NPM 5: this way is yours
 npm i hapi-dev-errors
 
-# you’re using NPM v4:
+# NPM 4:
 npm i -S hapi-dev-errors
 ```
 
@@ -51,11 +51,11 @@ npm i -S hapi-dev-errors
 Use the `1.3.2` release of `hapi-dev-errors` with hapi v16. Later versions are only compatible with hapi v17.
 
 ```bash
-npm i -S hapi-dev-errors@1.3.2
-# you’re using NPM shortcuts to (i)nstall and (-S)ave the module as a dependency
-
-# NPM v5 users, this way is yours
+# NPM 5: this way is yours
 npm i hapi-dev-errors@1.3.2
+
+# NPM 4: use NPM shortcuts to (i)nstall and (-S)ave the module as a dependency
+npm i -S hapi-dev-errors@1.3.2
 ```
 
 
@@ -89,18 +89,21 @@ The following plugin options allow you to customize the default behavior of `hap
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
 - **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error instead of using `hapi-dev-error`’s default handling
 - **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
+- **toTerminal**: `(boolean)`, default: `true` — print pretty errors to the terminal as well (enabled by default)
 
 ```js
 await server.register({
     plugin: require('hapi-dev-errors'),
     options: {
         showErrors: process.env.NODE_ENV !== 'production',
-        template: 'my-error-view'
+        template: 'my-error-view',
+        toTerminal: true
     }
 })
 
 // went smooth like chocolate :)
 ```
+
 
 ## Provided Values for Your Custom Error View
 `hapi-dev-errors` supports the `template` option while registering the plugin. Provide a template name to
@@ -127,8 +130,10 @@ desired addition to this plugin.
 
 ## Links & Resources
 
-- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 80+ tutorials
+- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 90+ tutorials
 - [Youch](https://github.com/poppinss/youch) - Pretty error reporting for Node.js
+- [Youch terminal](https://github.com/poppinss/youch-terminal) - Pretty error reporting on your terminal
+
 
 ## Contributing
 
