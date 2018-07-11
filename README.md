@@ -32,6 +32,9 @@ seamlessly with Youch and delegates the error handling, if activated. The view w
 
 You can also print pretty errors to the terminal. This is nice when running your hapi server as an API.
 
+The terminal error is enabled by default, use the `toTerminal: false` option to disable it.
+
+
 ![hapi-dev-errors pretty terminal error](media/hapi-dev-errors-on-terminal.png)
 
 
