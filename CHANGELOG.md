@@ -2,9 +2,18 @@
 
 ## Version 3.0.0 (2018-07-xx)
 - `add` Youch error view as the default error view
+- `add` Insomnia REST client to list of REST clients
+- `update` response type for JSON responses to `application/json`
+- `update` JSON responses have well-formatted payload
 - `update` examples: use a wildcard route and show error details for each path
 - `remove` plugin option: `useYouch` because Youch is the default now
 - `remove` default error view
+
+### Breaking Changes
+The most important breaking change is the removed `useYouch` option. Upgrading to `hapi-dev-errors` 3.0 should be no problem, even if you use the `useYouch` option. Because Youch is the default error view in 3.0, you'll receive the exact same error view.
+
+If you used the default error view before, you'll now see the Youch error details instead. You'll like it :)
+
 
 ## Version 2.3.0 (2018-07-12)
 - `add` new plugin option: `toTerminal`, default: `true`
