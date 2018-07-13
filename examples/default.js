@@ -19,7 +19,7 @@ async function launchIt () {
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/{path*}',
     handler: (request, h) => {
       h.notAvailable()
     }

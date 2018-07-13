@@ -19,21 +19,13 @@ Join the <a href="https://futurestud.io/university">Future Studio University and
 
 
 ## Introduction
-A hapi plugin to return an error view for web requests, providing more details of the issue. Also, provides the
-error stacktrace within the browser and you can skip the extra look at your command line to catch the issue.
+A hapi plugin to return an error view for web requests, providing more details of the issue. `hapi-dev-errors` will give you the exact file where the error happend and a nice error stacktrace within the browser. Skip the extra look at your command line to catch the issue's location.
 
-![hapi-dev-errors default error view](media/hapi-dev-errors-default-view.png)
+![hapi-dev-errors default error Youch error view](media/hapi-dev-errors-default-youch-view.png)
 
-You can choose [Youch](https://github.com/poppinss/youch) to handle your error reporting by using the `useYouch: true`
-[option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options). `hapi-dev-errors` integrates
-seamlessly with Youch and delegates the error handling, if activated. The view will look like this:
+`hapi-dev-errors` seamlessly integrates [Youch](https://github.com/poppinss/youch) to show the error details.
 
-![hapi-dev-errors Youch error view](media/hapi-dev-errors-useYouch-view.png)
-
-Besides the web view, `hapi-dev-errors` prints pretty error details to the terminal. This is nice when running your hapi server as an API.
-
-To disable the terminal error, use the [`toTerminal: false` option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options).
-
+Besides the web view, `hapi-dev-errors` prints pretty error details to the terminal. This is nice when running your hapi server as an API. Printing error details to the console is enabled by default. To disable the terminal error, use the [`toTerminal: false` option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options).
 
 ![hapi-dev-errors pretty terminal error](media/hapi-dev-errors-on-terminal.png)
 
@@ -94,7 +86,6 @@ await server.register({
 The following plugin options allow you to customize the default behavior of `hapi-dev-errors`:
 
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
-- **useYouch**: `(boolean)`, default: `false` — use [Youch](https://github.com/poppinss/youch) to handle and display the error instead of using `hapi-dev-error`’s default handling
 - **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
 - **toTerminal**: `(boolean)`, default: `true` — print pretty errors to the terminal as well (enabled by default)
 

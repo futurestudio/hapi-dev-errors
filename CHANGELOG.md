@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 3.0.0 (2018-07-xx)
+- `add` Youch error view as the default error view
+- `update` examples: use a wildcard route and show error details for each path
+- `remove` plugin option: `useYouch` because Youch is the default now
+- `remove` default error view
+
 ## Version 2.3.0 (2018-07-12)
 - `add` new plugin option: `toTerminal`, default: `true`
 - `add` pretty error details in the terminal besides the web view. Based on [`youch-terminal`](https://github.com/poppinss/youch-terminal)
