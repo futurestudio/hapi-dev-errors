@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 3.0.0 (2018-07-xx)
+## Version 3.0.0 (2018-07-17)
 - `add` Youch error view as the default error view
 - `add` Insomnia REST client to list of REST clients
 - `add` register plugin only once by activating the hapi plugin’s `once: true` attribute
