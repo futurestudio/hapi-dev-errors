@@ -128,7 +128,7 @@ desired addition to this plugin.
 
 ## Links & Resources
 
-- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 90+ tutorials
+- [hapi tutorial series](https://futurestud.io/tutorials/hapi-get-your-server-up-and-running) with 100+ tutorials
 - [Youch](https://github.com/poppinss/youch) - Pretty error reporting for Node.js
 - [Youch terminal](https://github.com/poppinss/youch-terminal) - Pretty error reporting on your terminal
 
