@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="256" src="https://github.com/fs-opensource/hapi-dev-errors/blob/master/media/hapi-dev-errors.png?raw=true" alt="hapi-dev-errors logo">
+  <img width="471" style="max-width:100%;" src="https://github.com/fs-opensource/hapi-dev-errors/blob/master/media/hapi-dev-errors.png?raw=true" alt="hapi-dev-errors logo">
 </p>
 
 <p align="center">
