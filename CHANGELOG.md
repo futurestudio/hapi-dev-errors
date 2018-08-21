@@ -1,6 +1,6 @@
 # Changelog
 
-## Version [3.0.0](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.0.0...v3.0.1) (2018-08-21)
+## Version [3.0.1](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.0.0...v3.0.1) (2018-08-21)
 - `update` readme: quick navigation and logo size fix for small screens
 
 
