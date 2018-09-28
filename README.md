@@ -125,6 +125,8 @@ value for the template name, the view will be rendered with `h.view(template, er
 
 Available properties to use in your custom error view:
 
+- `request`: the request that caused the error
+- `error`: the error response with all its properties
 - `title`: error title like `Internal Server Error`
 - `statusCode`: HTTP response status code (always 500)
 - `message`: error message, like `Uncaught error: h.view(...).test is not a function`
