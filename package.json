@@ -20,7 +20,7 @@
     "eslint-plugin-node": "~6.0.1",
     "eslint-plugin-promise": "~3.8.0",
     "eslint-plugin-standard": "~3.1.0",
-    "hapi": "17.5.4",
+    "hapi": "~17.5.2",
     "husky": "~0.14.3",
     "joi": "^13.6.0",
     "lab": "~15.5.0",

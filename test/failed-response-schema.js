@@ -50,6 +50,19 @@ experiment('hapi-dev-error falls back to json', () => {
     })
 
     expect(response.statusCode).to.equal(500)
+    expect(response.headers['content-type']).to.equal('text/html; charset=utf-8')
+  })
+
+  test('test if the response schema failed and no specified header', async () => {
+    const response = await server.inject({
+      url: '/kind',
+      method: 'GET',
+      headers: {
+        accept: 'application/json'
+      }
+    })
+
+    expect(response.statusCode).to.equal(500)
     expect(response.headers['content-type']).to.equal('application/json; charset=utf-8')
   })
 })
