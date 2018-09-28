@@ -37,12 +37,12 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(500)
@@ -60,7 +60,7 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -68,7 +68,7 @@ experiment('hapi-dev-error register plugin', () => {
       }
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -88,7 +88,7 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -96,7 +96,7 @@ experiment('hapi-dev-error register plugin', () => {
       }
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -117,7 +117,7 @@ experiment('hapi-dev-error register plugin', () => {
     server.route(routeOptions)
 
     const requestPayload = { name: 'Future Studio' }
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -126,7 +126,7 @@ experiment('hapi-dev-error register plugin', () => {
       payload: requestPayload
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -178,12 +178,12 @@ experiment('hapi-dev-error renders a custom template', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(500)

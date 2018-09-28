@@ -33,12 +33,12 @@ experiment('hapi-dev-error works only with 500 errors', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(200)

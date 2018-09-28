@@ -7,7 +7,6 @@ const Hapi = require('hapi')
 let server
 
 const { experiment, test, before } = (exports.lab = Lab.script())
-const expect = Code.expect
 
 experiment('hapi-dev-error falls back to json', () => {
   before(async () => {
@@ -43,8 +42,8 @@ experiment('hapi-dev-error falls back to json', () => {
     })
     const payload = response.payload
 
-    expect(response.statusCode).to.equal(500)
-    expect(payload).to.startWith('{')
+    Code.expect(response.statusCode).to.equal(500)
+    Code.expect(payload).to.startWith('{')
   })
 
   test('test if the plugin responses json with curl user-agent', async () => {
@@ -57,7 +56,7 @@ experiment('hapi-dev-error falls back to json', () => {
     })
     const payload = response.payload
 
-    expect(response.statusCode).to.equal(500)
-    expect(payload).to.startWith('{')
+    Code.expect(response.statusCode).to.equal(500)
+    Code.expect(payload).to.startWith('{')
   })
 })

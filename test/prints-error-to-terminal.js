@@ -8,7 +8,6 @@ const Sinon = require('sinon')
 let server
 
 const { experiment, test, before } = (exports.lab = Lab.script())
-const expect = Code.expect
 
 experiment('hapi-dev-error register plugin', () => {
   before(async () => {
@@ -45,7 +44,7 @@ experiment('hapi-dev-error register plugin', () => {
     Sinon.stub(console, 'log')
 
     const response = await server.inject(request)
-    expect(response.statusCode).to.equal(500)
+    Code.expect(response.statusCode).to.equal(500)
 
     Sinon.assert.called(console.log)
 
