@@ -3,7 +3,7 @@
 ## Version [3.1.0](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.0.1...v3.1.0) (2018-09-28)
 - `add` pass `request` to custom view: this allows you to access every request property
 - `add` pass `error` to custom view: this allows you to access every response property
-- `add` tests to verify plugin functionality for failed response validations
+- `add` tests to verify plugin functionality for failed response validations (thank you [venikman](https://github.com/fs-opensource/hapi-dev-errors/pull/6))
 - `update` dependencies
 
 ## Version [3.0.1](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.0.0...v3.0.1) (2018-08-21)
