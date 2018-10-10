@@ -103,7 +103,7 @@ The following plugin options allow you to customize the default behavior of `hap
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
 - **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
 - **toTerminal**: `(boolean)`, default: `true` — print pretty errors to the terminal as well (enabled by default)
-- **links**: `(array)`, defaults to Google and Stack Overflow icons that are linked with the error message as the search term (enabled by default). Pass an empty array `[]` to disable the default links
+- **links**: `(array)` - default: linked SVG icons for Google and Stack Overflow - an array of callback functions that accept the error as a parameter. The callback functions should return the link to render below the error message. Pass an empty array `[]` to disable the default links
 
 ```js
 await server.register({
