@@ -32,7 +32,7 @@ experiment('hapi-dev-error falls back to json', () => {
     server.route(routeOptions)
   })
 
-  test('test if the plugin responses json with json accept header', async () => {
+  test('test if the plugin responds json with json accept header', async () => {
     const response = await server.inject({
       url: '/error',
       method: 'GET',
@@ -46,7 +46,7 @@ experiment('hapi-dev-error falls back to json', () => {
     Code.expect(payload).to.startWith('{')
   })
 
-  test('test if the plugin responses json with curl user-agent', async () => {
+  test('test if the plugin responds json with curl user-agent', async () => {
     const response = await server.inject({
       url: '/error',
       method: 'GET',
