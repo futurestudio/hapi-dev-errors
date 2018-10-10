@@ -21,7 +21,7 @@ async function launchIt () {
     method: 'GET',
     path: '/{path*}',
     handler: (request, h) => {
-      h.notAvailable()
+      return h.notAvailable()
     }
   })
 
