@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [3.2.0](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.1.0...v3.2.0) (2018-09-28)
+- `add` new option [`links`](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options) which represents an array of callback functions to render helpful links. By default, `hapi-dev-errors` renders linked SVG icons for Google and Stack Overflow to search for help based on the error message
+
 ## Version [3.1.0](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.0.1...v3.1.0) (2018-09-28)
 - `add` pass `request` to custom view: this allows you to access every request property
 - `add` pass `error` to custom view: this allows you to access every response property
