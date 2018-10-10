@@ -103,6 +103,7 @@ The following plugin options allow you to customize the default behavior of `hap
 - **showErrors**: `(boolean)`, default: `false` — by default, the plugin is disabled and keeps hapi's default error handling behavior
 - **template**: `(string)`, no default — provide the template name that you want to render with `h.view(template, errorData)`
 - **toTerminal**: `(boolean)`, default: `true` — print pretty errors to the terminal as well (enabled by default)
+- **links**: `(array)`, defaults to Google and Stack Overflow icons that are linked with the error message as the search term (enabled by default). Pass an empty array `[]` to disable the default links
 
 ```js
 await server.register({
@@ -110,7 +111,13 @@ await server.register({
     options: {
         showErrors: process.env.NODE_ENV !== 'production',
         template: 'my-error-view',
-        toTerminal: true
+        toTerminal: true,
+        links: [ (error) => {
+          return `<a href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
+                    Search Youch on GitHub
+                  </a>`
+        }
+      ]
     }
 })
 

@@ -7,8 +7,7 @@
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
   },
   "dependencies": {
-    "hoek": "~5.0.3",
-    "youch": "~2.0.8",
+    "youch": "~2.0.10",
     "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
@@ -21,10 +20,10 @@
     "eslint-plugin-promise": "~3.8.0",
     "eslint-plugin-standard": "~3.1.0",
     "hapi": "~17.6.0",
-    "husky": "~1.0.1",
-    "joi": "~13.6.0",
+    "husky": "~1.1.1",
+    "joi": "~13.7.0",
     "lab": "~15.5.0",
-    "sinon": "~6.3.4",
+    "sinon": "~6.3.5",
     "vision": "~5.4.0"
   },
   "engines": {
