@@ -18,7 +18,7 @@ async function launchIt () {
       links: [
         (error) => {
           return `<a rel="noopener noreferrer" target="_blank" href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
-                    Search Youch on GitHub
+                    Search on GitHub
                   </a>`
         }
       ]
