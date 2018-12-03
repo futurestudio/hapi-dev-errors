@@ -8,7 +8,7 @@ const Path = require('path')
 
 let server
 
-const { experiment, test, before, beforeEach } = (exports.lab = Lab.script())
+const { experiment, it, before, beforeEach } = (exports.lab = Lab.script())
 const expect = Code.expect
 
 experiment('hapi-dev-error register plugin', () => {
@@ -26,7 +26,7 @@ experiment('hapi-dev-error register plugin', () => {
     })
   })
 
-  test('test if the plugin is enabled in development for web requests', async () => {
+  it('is enabled in development for web requests', async () => {
     const routeOptions = {
       path: '/showErrorsForWeb',
       method: 'GET',
@@ -49,7 +49,7 @@ experiment('hapi-dev-error register plugin', () => {
     expect(payload).to.startWith('<!DOCTYPE html>')
   })
 
-  test('test if the plugin is enabled in development for JSON/REST requests', async () => {
+  it('is enabled in development for JSON/REST requests', async () => {
     const routeOptions = {
       path: '/showErrorsForREST',
       method: 'GET',
@@ -77,7 +77,7 @@ experiment('hapi-dev-error register plugin', () => {
     expect(payload.method).to.equal(routeOptions.method)
   })
 
-  test('test when the error is from a rejected Promise', async () => {
+  it('test when the error is from a rejected Promise', async () => {
     const routeOptions = {
       path: '/showPromiseError',
       method: 'GET',
@@ -105,7 +105,7 @@ experiment('hapi-dev-error register plugin', () => {
     expect(payload.method).to.equal(routeOptions.method)
   })
 
-  test('test if the request payload is added to the error response', async () => {
+  it('test if the request payload is added to the error response', async () => {
     const routeOptions = {
       path: '/with-request-payload',
       method: 'POST',
@@ -167,7 +167,7 @@ experiment('hapi-dev-error renders a custom template', () => {
     })
   })
 
-  test('render a template', async () => {
+  it('render a template', async () => {
     const routeOptions = {
       path: '/custom-view',
       method: 'GET',

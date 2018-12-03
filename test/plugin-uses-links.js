@@ -5,7 +5,7 @@ const Code = require('code')
 const Hapi = require('hapi')
 const Sinon = require('sinon')
 
-const { experiment, test, beforeEach, afterEach } = (exports.lab = Lab.script())
+const { experiment, it, beforeEach, afterEach } = (exports.lab = Lab.script())
 
 experiment('hapi-dev-error handles custom user links', () => {
   async function createServer (options) {
@@ -39,7 +39,7 @@ experiment('hapi-dev-error handles custom user links', () => {
     console.error.restore()
   })
 
-  test('that the plugin works fine with empty links', async () => {
+  it('works fine with empty links', async () => {
     const server = await createServer({ links: [] })
 
     const response = await server.inject({
@@ -53,7 +53,7 @@ experiment('hapi-dev-error handles custom user links', () => {
     Code.expect(response.payload).to.startWith('<')
   })
 
-  test('that the plugin throws if the links are strings', async () => {
+  it('throws if the links are strings', async () => {
     const server = await createServer({ links: [ 'error' ] })
 
     const response = await server.inject({
@@ -68,7 +68,7 @@ experiment('hapi-dev-error handles custom user links', () => {
     Code.expect(response.payload).to.include('Internal Server Error')
   })
 
-  test('that the plugin throws if the links is not an array of functions', async () => {
+  it('throws if the links is not an array of functions', async () => {
     const server = await createServer({ links: 'error' })
 
     const response = await server.inject({
@@ -83,7 +83,7 @@ experiment('hapi-dev-error handles custom user links', () => {
     Code.expect(response.payload).to.include('Internal Server Error')
   })
 
-  test('that the plugin works fine with a link function', async () => {
+  it('works fine with a link function', async () => {
     const server = await createServer({ links: () => `link` })
 
     const response = await server.inject({
