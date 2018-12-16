@@ -9,18 +9,25 @@ const server = new Hapi.Server({
   port: 3000
 })
 
-async function youchIt () {
+async function launchIt () {
   await server.register({
-    plugin: require('../'),
+    plugin: require('../lib'),
     options: {
       showErrors: process.env.NODE_ENV !== 'production',
-      useYouch: true
+      toTerminal: false,
+      links: [
+        (error) => {
+          return `<a rel="noopener noreferrer" target="_blank" href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
+                    Search on GitHub
+                  </a>`
+        }
+      ]
     }
   })
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/{path*}',
     handler: (request, h) => {
       h.notAvailable()
     }
@@ -34,4 +41,4 @@ async function youchIt () {
   }
 }
 
-youchIt()
+launchIt()

@@ -1,39 +1,43 @@
 {
   "name": "hapi-dev-errors",
   "description": "Return better error details and skip the look at command line to catch the issue.",
-  "version": "2.1.0",
+  "version": "3.2.0",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
     "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
   },
   "dependencies": {
-    "hoek": "~5.0.3",
-    "youch": "~2.0.7"
+    "youch": "~2.0.10",
+    "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
-    "boom": "~7.1.1",
+    "boom": "~7.3.0",
     "code": "~5.2.0",
-    "eslint-config-standard": "~10.2.1",
-    "eslint-plugin-import": "~2.8.0",
-    "eslint-plugin-node": "~5.2.1",
-    "eslint-plugin-promise": "~3.6.0",
-    "eslint-plugin-standard": "~3.0.1",
-    "hapi": "~17.2.0",
-    "husky": "~0.14.3",
-    "lab": "~15.2.2",
-    "vision": "~5.3.1"
+    "eslint": "~5.9.0",
+    "eslint-config-standard": "~12.0.0",
+    "eslint-plugin-import": "~2.14.0",
+    "eslint-plugin-node": "~8.0.0",
+    "eslint-plugin-promise": "~4.0.1",
+    "eslint-plugin-standard": "~4.0.0",
+    "hapi": "~17.8.1",
+    "husky": "~1.2.0",
+    "joi": "~14.3.0",
+    "lab": "~18.0.0",
+    "sinon": "~7.1.1",
+    "vision": "~5.4.0"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
   "keywords": [
-    "developer",
-    "error",
-    "errors",
     "hapi",
     "hapijs",
-    "plugin"
+    "plugin",
+    "error",
+    "errors",
+    "debugging",
+    "developer"
   ],
   "license": "MIT",
   "main": "lib/index.js",

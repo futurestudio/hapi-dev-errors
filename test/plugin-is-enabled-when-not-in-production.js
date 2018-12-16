@@ -8,23 +8,25 @@ const Path = require('path')
 
 let server
 
-const { experiment, test, before, beforeEach } = (exports.lab = Lab.script())
+const { experiment, it, before, beforeEach } = (exports.lab = Lab.script())
 const expect = Code.expect
 
 experiment('hapi-dev-error register plugin', () => {
   beforeEach(async () => {
     server = new Hapi.Server()
+    // fake dev env
+    process.env.NODE_ENV = 'development'
 
-    // fake dev env, no process.env.NODE_ENV defined
     await server.register({
       plugin: require('../lib/index'),
       options: {
-        showErrors: process.env.NODE_ENV !== 'production'
+        showErrors: process.env.NODE_ENV !== 'production',
+        toTerminal: false
       }
     })
   })
 
-  test('test if the plugin is enabled in development for web requests', async () => {
+  it('is enabled in development for web requests', async () => {
     const routeOptions = {
       path: '/showErrorsForWeb',
       method: 'GET',
@@ -35,19 +37,19 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(500)
     expect(payload).to.startWith('<!DOCTYPE html>')
   })
 
-  test('test if the plugin is enabled in development for JSON/REST requests', async () => {
+  it('is enabled in development for JSON/REST requests', async () => {
     const routeOptions = {
       path: '/showErrorsForREST',
       method: 'GET',
@@ -58,7 +60,7 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -66,7 +68,7 @@ experiment('hapi-dev-error register plugin', () => {
       }
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -75,7 +77,7 @@ experiment('hapi-dev-error register plugin', () => {
     expect(payload.method).to.equal(routeOptions.method)
   })
 
-  test('test when the error is from a rejected Promise', async () => {
+  it('test when the error is from a rejected Promise', async () => {
     const routeOptions = {
       path: '/showPromiseError',
       method: 'GET',
@@ -86,7 +88,7 @@ experiment('hapi-dev-error register plugin', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -94,7 +96,7 @@ experiment('hapi-dev-error register plugin', () => {
       }
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -103,7 +105,7 @@ experiment('hapi-dev-error register plugin', () => {
     expect(payload.method).to.equal(routeOptions.method)
   })
 
-  test('test if the request payload is added to the error response', async () => {
+  it('test if the request payload is added to the error response', async () => {
     const routeOptions = {
       path: '/with-request-payload',
       method: 'POST',
@@ -115,7 +117,7 @@ experiment('hapi-dev-error register plugin', () => {
     server.route(routeOptions)
 
     const requestPayload = { name: 'Future Studio' }
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method,
       headers: {
@@ -124,7 +126,7 @@ experiment('hapi-dev-error register plugin', () => {
       payload: requestPayload
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     expect(response.statusCode).to.equal(500)
@@ -144,14 +146,15 @@ experiment('hapi-dev-error renders a custom template', () => {
     // fake dev env, no process.env.NODE_ENV defined
     await server.register([
       {
+        plugin: require('vision')
+      },
+      {
         plugin: require('../lib/index'),
         options: {
           showErrors: process.env.NODE_ENV !== 'production',
-          template: 'error'
+          template: 'error',
+          toTerminal: false
         }
-      },
-      {
-        plugin: require('vision')
       }
     ])
 
@@ -164,7 +167,7 @@ experiment('hapi-dev-error renders a custom template', () => {
     })
   })
 
-  test('render a template', async () => {
+  it('render a template', async () => {
     const routeOptions = {
       path: '/custom-view',
       method: 'GET',
@@ -175,12 +178,12 @@ experiment('hapi-dev-error renders a custom template', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(500)

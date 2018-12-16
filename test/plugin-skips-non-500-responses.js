@@ -3,10 +3,11 @@
 const Lab = require('lab')
 const Code = require('code')
 const Hapi = require('hapi')
+const Boom = require('boom')
 
 let server
 
-const { experiment, test, before } = (exports.lab = Lab.script())
+const { experiment, it, before } = (exports.lab = Lab.script())
 const expect = Code.expect
 
 experiment('hapi-dev-error works only with 500 errors', () => {
@@ -22,26 +23,42 @@ experiment('hapi-dev-error works only with 500 errors', () => {
     })
   })
 
-  test('test if the plugin skips handling for non-error response', async () => {
+  it('skips handling for non-error response', async () => {
     const routeOptions = {
       path: '/ok',
       method: 'GET',
-      handler: () => {
-        return 'ok'
-      }
+      handler: () => 'ok'
     }
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = response.payload
 
     expect(response.statusCode).to.equal(200)
     expect(payload).to.equal('ok')
+  })
+
+  it('skips handling for 404 errors', async () => {
+    const routeOptions = {
+      path: '/404',
+      method: 'GET',
+      handler: () => Boom.notFound()
+    }
+
+    server.route(routeOptions)
+
+    const request = {
+      url: routeOptions.path,
+      method: routeOptions.method
+    }
+
+    const response = await server.inject(request)
+    expect(response.statusCode).to.equal(404)
   })
 })

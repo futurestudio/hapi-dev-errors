@@ -27,12 +27,12 @@ experiment('plugin-is-disabled-by-default,', () => {
 
     server.route(routeOptions)
 
-    const options = {
+    const request = {
       url: routeOptions.path,
       method: routeOptions.method
     }
 
-    const response = await server.inject(options)
+    const response = await server.inject(request)
     const payload = JSON.parse(response.payload || '{}')
 
     Code.expect(response.statusCode).to.equal(500)

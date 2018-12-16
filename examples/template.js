@@ -19,8 +19,7 @@ async function launchIt () {
       plugin: require('../'),
       options: {
         showErrors: process.env.NODE_ENV !== 'production',
-        template: 'error',
-        useYouch: true // this will be ignored, option 'template' > 'useYouch'
+        template: 'error'
       }
     }
   ])
@@ -36,7 +35,7 @@ async function launchIt () {
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/{path*}',
     handler: (request, reply) => {
       reply.notAvailable()
     }
