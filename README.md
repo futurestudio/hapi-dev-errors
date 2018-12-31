@@ -114,9 +114,10 @@ await server.register({
         template: 'my-error-view',
         toTerminal: true,
         links: [ (error) => {
-          return `<a href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
-                    Search Youch on GitHub
-                  </a>`
+          return `
+            <a href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
+              Search hapi-dev-errors on GitHub
+            </a>`
         }
       ]
     }
