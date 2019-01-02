@@ -3,6 +3,7 @@
 const Lab = require('lab')
 const Code = require('code')
 const Hapi = require('hapi')
+const Boom = require('boom')
 
 const server = new Hapi.Server()
 
@@ -20,9 +21,7 @@ experiment('plugin-is-disabled-by-default,', () => {
     const routeOptions = {
       path: '/no-options',
       method: 'GET',
-      handler: () => {
-        return new Error('failure')
-      }
+      handler: () => new Error('failure')
     }
 
     server.route(routeOptions)
@@ -38,5 +37,28 @@ experiment('plugin-is-disabled-by-default,', () => {
     Code.expect(response.statusCode).to.equal(500)
     Code.expect(payload.message).to.equal('An internal server error occurred')
     Code.expect(payload.error).to.equal('Internal Server Error')
+  })
+
+  test('does not render the gorgeous error view for 503 errors', async () => {
+    const routeOptions = {
+      path: '/503-unhandled',
+      method: 'GET',
+      handler: () => Boom.serverUnavailable('not ready')
+
+    }
+
+    server.route(routeOptions)
+
+    const request = {
+      url: routeOptions.path,
+      method: routeOptions.method
+    }
+
+    const response = await server.inject(request)
+    const payload = JSON.parse(response.payload || '{}')
+
+    Code.expect(response.statusCode).to.equal(503)
+    Code.expect(payload.message).to.equal('not ready')
+    Code.expect(payload.error).to.equal('Service Unavailable')
   })
 })
