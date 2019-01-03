@@ -2,12 +2,7 @@
 
 const Hapi = require('hapi')
 
-// create new server instance
-// add server’s connection information
-const server = new Hapi.Server({
-  host: 'localhost',
-  port: 3000
-})
+const server = new Hapi.Server({ host: 'localhost', port: 3000 })
 
 async function launchIt () {
   await server.register({
@@ -18,7 +13,7 @@ async function launchIt () {
       links: [
         (error) => {
           return `<a rel="noopener noreferrer" target="_blank" href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
-                    Search on GitHub
+                    Search hapi-dev-errors on GitHub
                   </a>`
         }
       ]
@@ -28,17 +23,13 @@ async function launchIt () {
   server.route({
     method: 'GET',
     path: '/{path*}',
-    handler: (request, h) => {
+    handler: (_, h) => {
       h.notAvailable()
     }
   })
 
-  try {
-    await server.start()
-    console.log('Server running at: ' + server.info.uri)
-  } catch (err) {
-    throw err
-  }
+  await server.start()
+  console.log('Server running at: ' + server.info.uri)
 }
 
 launchIt()
