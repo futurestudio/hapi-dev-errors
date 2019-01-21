@@ -30,10 +30,7 @@ experiment('hapi-dev-error register plugin', () => {
     const routeOptions = {
       path: '/showErrorsForWeb',
       method: 'GET',
-      handler: () => {
-        return Boom.badImplementation('a fancy server error')
-      }
-    }
+      handler: () => Boom.badImplementation('a fancy server error') }
 
     server.route(routeOptions)
 
@@ -81,9 +78,7 @@ experiment('hapi-dev-error register plugin', () => {
     const routeOptions = {
       path: '/showPromiseError',
       method: 'GET',
-      handler: () => {
-        return Promise.reject(new Error('server error'))
-      }
+      handler: () => new Error('server error')
     }
 
     server.route(routeOptions)
@@ -109,9 +104,7 @@ experiment('hapi-dev-error register plugin', () => {
     const routeOptions = {
       path: '/with-request-payload',
       method: 'POST',
-      handler: () => {
-        return Promise.reject(new Error('server error with payload'))
-      }
+      handler: () => new Error('server error with payload')
     }
 
     server.route(routeOptions)
