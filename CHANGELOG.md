@@ -1,9 +1,15 @@
 # Changelog
 
-## Version [3.2.1](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.2.0...v3.2.1) (2019-01-xx)
-- `add` error handler class and refactor code
-- `update` split plugin handling and extension point registration from request handling
-- `update` move icons (Google, Stack Overflow) to SVG files
+## Version [3.2.1](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.2.0...v3.2.1) (2019-01-22)
+
+### Updated
+- refactor plugin: error handler class and plugin entry point
+- split plugin handling and extension point registration from request handling
+- move icons (Google, Stack Overflow) to SVG files
+- refine texts in Readme
+- refactor code in examples
+- bump dependencies
+- update tests to use `it` over `test`
 
 
 ## Version [3.2.0](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.1.0...v3.2.0) (2018-10-10)
