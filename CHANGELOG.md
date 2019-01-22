@@ -3,6 +3,7 @@
 ## Version [3.2.1](https://github.com/fs-opensource/hapi-dev-errors/compare/v3.2.0...v3.2.1) (2019-01-22)
 
 ### Updated
+- use `request.path` over `request.url.path` to support hapi 18
 - refactor plugin: error handler class and plugin entry point
 - split plugin handling and extension point registration from request handling
 - move icons (Google, Stack Overflow) to SVG files
