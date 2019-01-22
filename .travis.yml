@@ -4,3 +4,15 @@ node_js:
   - 10
   - 11
   - node
+
+env:
+  - HAPI_VERSION=""
+
+matrix:
+  include:
+    - node_js: "8"
+      env: HAPI_VERSION="@17"
+
+install:
+  - npm install
+  - npm install hapi$HAPI_VERSION
