@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="471" style="max-width:100%;" src="https://github.com/fs-opensource/hapi-dev-errors/blob/master/media/hapi-dev-errors.png?raw=true" alt="hapi-dev-errors logo">
+  <img width="471" style="max-width:100%;" src="https://github.com/futurestudio/hapi-dev-errors/blob/master/media/hapi-dev-errors.png?raw=true" alt="hapi-dev-errors logo">
   <br/>
   <br/>
   <p>
@@ -14,10 +14,10 @@
   <br/>
   <br/>
   <p>
-    <a href="https://travis-ci.org/fs-opensource/hapi-dev-errors"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/fs-opensource/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
-    <a href="https://snyk.io/test/github/fs-opensource/hapi-dev-errors"><img src="https://snyk.io/test/github/fs-opensource/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/fs-opensource/hapi-dev-errors" style="max-width:100%;"></a>
+    <a href="https://travis-ci.org/futurestudio/hapi-dev-errors"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
+    <a href="https://snyk.io/test/github/futurestudio/hapi-dev-errors"><img src="https://snyk.io/test/github/futurestudio/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-dev-errors" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="hapi-dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/hapi-dev-errors.svg" style="max-width:100%;"></a>
-    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://camo.githubusercontent.com/dfb11cc7fc0b1600f0ba93236eff58bb592b8500/68747470733a2f2f6261646765732e677265656e6b65657065722e696f2f66732d6f70656e736f757263652f686170692d6465762d6572726f72732e737667" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/fs-opensource/hapi-dev-errors.svg" style="max-width:100%;"></a>
+    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://camo.githubusercontent.com/dfb11cc7fc0b1600f0ba93236eff58bb592b8500/68747470733a2f2f6261646765732e677265656e6b65657065722e696f2f66732d6f70656e736f757263652f686170692d6465762d6572726f72732e737667" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" style="max-width:100%;"></a>
   </p>
   <p>
     <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
@@ -41,7 +41,7 @@ A hapi plugin to return an error view for web requests, providing more details o
 
 `hapi-dev-errors` seamlessly integrates [Youch](https://github.com/poppinss/youch) to show the error details.
 
-Besides the web view, `hapi-dev-errors` prints pretty error details to the terminal. This is nice when running your hapi server as an API. Printing error details to the console is enabled by default. To disable the terminal error, use the [`toTerminal: false` option](https://github.com/fs-opensource/hapi-dev-errors#plugin-registration-options).
+Besides the web view, `hapi-dev-errors` prints pretty error details to the terminal. This is nice when running your hapi server as an API. Printing error details to the console is enabled by default. To disable the terminal error, use the [`toTerminal: false` option](https://github.com/futurestudio/hapi-dev-errors#plugin-registration-options).
 
 ![hapi-dev-errors pretty terminal error](media/hapi-dev-errors-on-terminal.png)
 
@@ -75,7 +75,7 @@ npm i -S hapi-dev-errors@1.3.2
 
 
 ## Examples
-Check out the [examples](https://github.com/fs-opensource/hapi-dev-errors/tree/master/examples) directory and get
+Check out the [examples](https://github.com/futurestudio/hapi-dev-errors/tree/master/examples) directory and get
 an impression on how to configure `hapi-dev-errors` with the individual plugins options and how to customize the
 error view.
 
@@ -115,7 +115,7 @@ await server.register({
         toTerminal: true,
         links: [ (error) => {
           return `
-            <a href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
+            <a href="https://github.com/futurestudio/hapi-dev-errors/search?q=${error.message}">
               Search hapi-dev-errors on GitHub
             </a>`
         }
@@ -148,7 +148,7 @@ Available properties to use in your custom error view:
 
 ## Feature Requests
 Do you miss a feature? Please don’t hesitate to
-[create an issue](https://github.com/fs-opensource/hapi-dev-errors/issues) with a short description of your
+[create an issue](https://github.com/futurestudio/hapi-dev-errors/issues) with a short description of your
 desired addition to this plugin.
 
 
@@ -175,5 +175,5 @@ MIT © [Future Studio](https://futurestud.io)
 ---
 
 > [futurestud.io](https://futurestud.io) &nbsp;&middot;&nbsp;
-> GitHub [@fs-opensource](https://github.com/fs-opensource/) &nbsp;&middot;&nbsp;
+> GitHub [@futurestudio](https://github.com/futurestudio/) &nbsp;&middot;&nbsp;
 > Twitter [@futurestud_io](https://twitter.com/futurestud_io)

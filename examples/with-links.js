@@ -12,7 +12,7 @@ async function launchIt () {
       toTerminal: false,
       links: [
         (error) => {
-          return `<a rel="noopener noreferrer" target="_blank" href="https://github.com/fs-opensource/hapi-dev-errors/search?q=${error.message}">
+          return `<a rel="noopener noreferrer" target="_blank" href="https://github.com/futurestudio/hapi-dev-errors/search?q=${error.message}">
                     Search hapi-dev-errors on GitHub
                   </a>`
         }

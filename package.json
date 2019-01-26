@@ -4,7 +4,7 @@
   "version": "3.2.1",
   "author": "Future Studio <info@futurestud.io>",
   "bugs": {
-    "url": "https://github.com/fs-opensource/hapi-dev-errors/issues"
+    "url": "https://github.com/futurestudio/hapi-dev-errors/issues"
   },
   "dependencies": {
     "youch": "~2.0.10",
@@ -29,7 +29,7 @@
   "engines": {
     "node": ">=8"
   },
-  "homepage": "https://github.com/fs-opensource/hapi-dev-errors#readme",
+  "homepage": "https://github.com/futurestudio/hapi-dev-errors#readme",
   "keywords": [
     "hapi",
     "hapijs",
@@ -43,7 +43,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fs-opensource/hapi-dev-errors.git"
+    "url": "git+https://github.com/futurestudio/hapi-dev-errors.git"
   },
   "scripts": {
     "test": "lab --assert code --leaks --coverage --lint",
