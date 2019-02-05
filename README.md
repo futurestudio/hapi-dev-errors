@@ -14,10 +14,10 @@
   <br/>
   <br/>
   <p>
-    <a href="https://travis-ci.org/futurestudio/hapi-dev-errors"><img src="https://camo.githubusercontent.com/9f56ef242c6f588f74f39f0bd61c1acd34d853af/68747470733a2f2f7472617669732d63692e6f72672f66732d6f70656e736f757263652f686170692d67656f2d6c6f636174652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
+    <a href="https://travis-ci.org/futurestudio/hapi-dev-errors"><img src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
     <a href="https://snyk.io/test/github/futurestudio/hapi-dev-errors"><img src="https://snyk.io/test/github/futurestudio/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-dev-errors" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="hapi-dev-errors Version" data-canonical-src="https://img.shields.io/npm/v/hapi-dev-errors.svg" style="max-width:100%;"></a>
-    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://camo.githubusercontent.com/dfb11cc7fc0b1600f0ba93236eff58bb592b8500/68747470733a2f2f6261646765732e677265656e6b65657065722e696f2f66732d6f70656e736f757263652f686170692d6465762d6572726f72732e737667" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" style="max-width:100%;"></a>
+    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" style="max-width:100%;"></a>
   </p>
   <p>
     <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
