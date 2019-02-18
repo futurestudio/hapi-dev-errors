@@ -1,9 +1,16 @@
 # Changelog
 
+## Version [3.2.3](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.2...v3.2.3) (2019-02-18)
+
+### Updated
+- bump dependencies
+- fix badges in Readme
+
+
 ## Version [3.2.2](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.1...v3.2.2) (2019-01-26)
 
 ### Updated
-- Readme: rename GitHub references `futurestudio -> futurestudio`
+- Readme: rename GitHub references `fs-opensource -> futurestudio`
 
 
 ## Version [3.2.1](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.0...v3.2.1) (2019-01-22)
