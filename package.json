@@ -13,7 +13,7 @@
   "devDependencies": {
     "boom": "~7.3.0",
     "code": "~5.2.4",
-    "eslint": "~5.14.0",
+    "eslint": "~5.15.0",
     "eslint-config-standard": "~12.0.0",
     "eslint-plugin-import": "~2.16.0",
     "eslint-plugin-node": "~8.0.1",
