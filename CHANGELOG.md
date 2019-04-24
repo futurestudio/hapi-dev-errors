@@ -1,5 +1,12 @@
 # Changelog
 
+## Version [3.2.4](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.3...v3.2.4) (2019-04-25)
+
+### Updated
+- bump dependencies
+- update to hapi scoped dependencies
+
+
 ## Version [3.2.3](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.2...v3.2.3) (2019-02-18)
 
 ### Updated
