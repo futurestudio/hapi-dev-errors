@@ -139,7 +139,7 @@ experiment('hapi-dev-error renders a custom template', () => {
     // fake dev env, no process.env.NODE_ENV defined
     await server.register([
       {
-        plugin: require('vision')
+        plugin: require('@hapi/vision')
       },
       {
         plugin: require('../lib/index'),
