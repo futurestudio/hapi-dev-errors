@@ -1,10 +1,10 @@
 'use strict'
 
-const Lab = require('lab')
-const Code = require('code')
-const Boom = require('boom')
-const Hapi = require('hapi')
 const Path = require('path')
+const Lab = require('@hapi/lab')
+const Code = require('@hapi/code')
+const Hapi = require('@hapi/hapi')
+const Boom = require('@hapi/boom')
 
 let server
 

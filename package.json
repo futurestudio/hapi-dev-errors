@@ -11,8 +11,11 @@
     "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
-    "boom": "~7.3.0",
-    "code": "~5.2.4",
+    "@hapi/boom": "~7.4.2",
+    "@hapi/code": "~5.3.1",
+    "@hapi/hapi": "~18.3.1",
+    "@hapi/lab": "~18.1.2",
+    "@hapi/vision": "~5.5.2",
     "eslint": "~5.16.0",
     "eslint-config-standard": "~12.0.0",
     "eslint-plugin-import": "~2.17.0",
@@ -22,9 +25,7 @@
     "hapi": "~18.1.0",
     "husky": "~2.0.0",
     "joi": "~14.3.1",
-    "lab": "~18.0.2",
-    "sinon": "~7.3.0",
-    "vision": "~5.4.4"
+    "sinon": "~7.3.0"
   },
   "engines": {
     "node": ">=8"
@@ -46,7 +47,7 @@
     "url": "git+https://github.com/futurestudio/hapi-dev-errors.git"
   },
   "scripts": {
-    "test": "lab --assert code --leaks --coverage --lint",
+    "test": "lab --assert @hapi/code --leaks --coverage --lint",
     "prepush": "npm test"
   }
 }

@@ -1,9 +1,9 @@
 'use strict'
 
-const Lab = require('lab')
-const Joi = require('joi')
-const Code = require('code')
-const Hapi = require('hapi')
+const Joi = require('@hapi/joi')
+const Lab = require('@hapi/lab')
+const Code = require('@hapi/code')
+const Hapi = require('@hapi/hapi')
 
 let server
 
