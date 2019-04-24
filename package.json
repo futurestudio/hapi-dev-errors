@@ -6,6 +6,12 @@
   "bugs": {
     "url": "https://github.com/futurestudio/hapi-dev-errors/issues"
   },
+  "contributors": [
+    {
+      "name": "Marcus Poehls",
+      "email": "marcus@futurestud.io"
+    }
+  ],
   "dependencies": {
     "youch": "~2.0.10",
     "youch-terminal": "~1.0.0"
