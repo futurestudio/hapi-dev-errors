@@ -1,6 +1,6 @@
 'use strict'
 
-const Hapi = require('hapi')
+const Hapi = require('@hapi/hapi')
 const Path = require('path')
 
 const server = new Hapi.Server({ host: 'localhost', port: 3000 })
@@ -8,7 +8,7 @@ const server = new Hapi.Server({ host: 'localhost', port: 3000 })
 async function launchIt () {
   await server.register([
     {
-      plugin: require('vision')
+      plugin: require('@hapi/vision')
     },
     {
       plugin: require('../'),
