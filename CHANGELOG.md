@@ -1,6 +1,6 @@
 # Changelog
 
-## Version [3.2.4](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.3...v3.2.4) (2019-04-25)
+## Version [3.2.4](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.3...v3.2.4) (2019-04-27)
 
 ### Updated
 - bump dependencies
