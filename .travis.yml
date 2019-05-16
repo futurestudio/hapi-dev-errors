@@ -16,4 +16,4 @@ matrix:
 
 install:
   - npm install
-  - npm install hapi$HAPI_VERSION
+  - npm install @hapi/hapi$HAPI_VERSION
