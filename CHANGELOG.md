@@ -1,5 +1,11 @@
 # Changelog
 
+## Version [3.2.6](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.5...v3.2.6) (2019-xx-xx)
+
+### Updated
+- refine Readme
+
+
 ## Version [3.2.5](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.4...v3.2.5) (2019-05-19)
 
 ### Updated
