@@ -1,5 +1,13 @@
 # Changelog
 
+## Version [3.2.5](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.4...v3.2.5) (2019-05-19)
+
+### Updated
+- fix `@hapi/hapi` import in examples
+- minor example refinements
+- bump dependencies
+
+
 ## Version [3.2.4](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.3...v3.2.4) (2019-04-27)
 
 ### Updated
