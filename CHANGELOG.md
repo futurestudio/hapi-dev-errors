@@ -3,6 +3,7 @@
 ## Version [3.2.5](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.4...v3.2.5) (2019-05-19)
 
 ### Updated
+- fix `.travis.yml` to properly test the hapi version matrix
 - fix `@hapi/hapi` import in examples
 - minor example refinements
 - bump dependencies
