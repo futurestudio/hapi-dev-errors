@@ -55,11 +55,7 @@ This plugin uses async/await which requires **Node.js v8 or newer**.
 Add `hapi-dev-errors` as a dependency to your project:
 
 ```bash
-# NPM 5: this way is yours
 npm i hapi-dev-errors
-
-# NPM 4:
-npm i -S hapi-dev-errors
 ```
 
 
@@ -67,11 +63,7 @@ npm i -S hapi-dev-errors
 Use the `1.3.2` release of `hapi-dev-errors` with hapi v16. Later versions are only compatible with hapi v17.
 
 ```bash
-# NPM 5: this way is yours
 npm i hapi-dev-errors@1.3.2
-
-# NPM 4: use NPM shortcuts to (i)nstall and (-S)ave the module as a dependency
-npm i -S hapi-dev-errors@1.3.2
 ```
 
 
@@ -118,7 +110,8 @@ await server.register({
           return `
             <a href="https://github.com/futurestudio/hapi-dev-errors/search?q=${error.message}">
               Search hapi-dev-errors on GitHub
-            </a>`
+            </a>
+          `
         }
       ]
     }
