@@ -20,9 +20,7 @@ async function launchIt () {
   ])
 
   server.views({
-    engines: {
-      html: require('handlebars')
-    },
+    engines: { html: require('handlebars') },
     path: Path.resolve(__dirname, 'views'),
     layout: 'layout',
     isCached: process.env.NODE_ENV !== 'production'
@@ -31,9 +29,7 @@ async function launchIt () {
   server.route({
     method: '*',
     path: '/{path*}',
-    handler: (_, reply) => {
-      reply.notAvailable()
-    }
+    handler: (_, h) => h.notAvailable()
   })
 
   await server.start()
