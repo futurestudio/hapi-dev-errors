@@ -52,6 +52,8 @@
     "url": "git+https://github.com/futurestudio/hapi-dev-errors.git"
   },
   "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "test": "lab --assert @hapi/code --leaks --coverage --lint",
     "prepush": "npm test"
   }
