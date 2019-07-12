@@ -54,7 +54,7 @@ experiment('hapi-dev-error handles custom user links', () => {
   })
 
   it('throws if the links are strings', async () => {
-    const server = await createServer({ links: [ 'error' ] })
+    const server = await createServer({ links: ['error'] })
 
     const response = await server.inject({
       url: '/',
