@@ -30,7 +30,8 @@ experiment('hapi-dev-error register plugin', () => {
     const routeOptions = {
       path: '/showErrorsForWeb',
       method: 'GET',
-      handler: () => Boom.badImplementation('a fancy server error') }
+      handler: () => Boom.badImplementation('a fancy server error')
+    }
 
     server.route(routeOptions)
 
