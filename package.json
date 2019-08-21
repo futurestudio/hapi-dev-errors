@@ -17,20 +17,20 @@
     "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
-    "@hapi/boom": "~7.4.2",
+    "@hapi/boom": "~7.4.3",
     "@hapi/code": "~6.0.0",
-    "@hapi/hapi": "~18.3.1",
-    "@hapi/joi": "~15.0.3",
+    "@hapi/hapi": "~18.3.2",
+    "@hapi/joi": "~15.1.1",
     "@hapi/lab": "~20.1.0",
-    "@hapi/vision": "~5.5.2",
-    "eslint": "~6.2.0",
+    "@hapi/vision": "~5.5.3",
+    "eslint": "~6.2.1",
     "eslint-config-standard": "~14.0.0",
-    "eslint-plugin-import": "~2.18.0",
+    "eslint-plugin-import": "~2.18.2",
     "eslint-plugin-node": "~9.1.0",
     "eslint-plugin-promise": "~4.2.1",
-    "eslint-plugin-standard": "~4.0.0",
-    "husky": "~3.0.0",
-    "sinon": "~7.4.0"
+    "eslint-plugin-standard": "~4.0.1",
+    "husky": "~3.0.4",
+    "sinon": "~7.4.1"
   },
   "engines": {
     "node": ">=8"
