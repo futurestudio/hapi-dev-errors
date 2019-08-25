@@ -21,7 +21,7 @@
     "@hapi/code": "~6.0.0",
     "@hapi/hapi": "~18.3.2",
     "@hapi/joi": "~15.1.1",
-    "@hapi/lab": "~20.1.0",
+    "@hapi/lab": "~20.2.1",
     "@hapi/vision": "~5.5.3",
     "eslint": "~6.2.1",
     "eslint-config-standard": "~14.0.0",
