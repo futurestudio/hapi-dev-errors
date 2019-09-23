@@ -30,7 +30,7 @@
     "eslint-plugin-promise": "~4.2.1",
     "eslint-plugin-standard": "~4.0.1",
     "husky": "~3.0.4",
-    "sinon": "~7.4.1"
+    "sinon": "~7.5.0"
   },
   "engines": {
     "node": ">=8"
