@@ -4,6 +4,7 @@
 
 ### Updated
 - refine Readme
+- bump dependencies
 
 
 ## Version [3.2.5](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.4...v3.2.5) (2019-05-19)
