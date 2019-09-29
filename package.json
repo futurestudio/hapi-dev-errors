@@ -23,7 +23,7 @@
     "@hapi/joi": "~15.1.1",
     "@hapi/lab": "~20.3.2",
     "@hapi/vision": "~5.5.4",
-    "eslint": "~6.4.0",
+    "eslint": "~6.5.0",
     "eslint-config-standard": "~14.1.0",
     "eslint-plugin-import": "~2.18.2",
     "eslint-plugin-node": "~10.0.0",
