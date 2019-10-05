@@ -20,7 +20,7 @@
     "@hapi/boom": "~8.0.0",
     "@hapi/code": "~6.0.0",
     "@hapi/hapi": "~18.4.0",
-    "@hapi/joi": "~15.1.1",
+    "@hapi/joi": "~16.1.6",
     "@hapi/lab": "~20.4.0",
     "@hapi/vision": "~5.5.4",
     "eslint": "~6.5.0",
