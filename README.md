@@ -17,7 +17,7 @@
     <a href="https://travis-ci.org/futurestudio/hapi-dev-errors"><img src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" alt="Build Status" data-canonical-src="https://travis-ci.org/futurestudio/hapi-dev-errors.svg?branch=master" style="max-width:100%;"></a>
     <a href="https://snyk.io/test/github/futurestudio/hapi-dev-errors"><img src="https://snyk.io/test/github/futurestudio/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-dev-errors" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="Latest Version"></a>
-    <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/dm/hapi-dev-errors.svg" alt="Total downloads"></a>
+    <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/dm/hapi-dev-errors.svg" alt="Monthly downloads"></a>
     <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" style="max-width:100%;"></a>
   </p>
   <p>
