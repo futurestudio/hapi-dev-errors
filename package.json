@@ -2,16 +2,10 @@
   "name": "hapi-dev-errors",
   "description": "Return better error details and skip the look at command line to catch the issue.",
   "version": "3.2.6",
-  "author": "Future Studio <info@futurestud.io>",
+  "author": "Marcus Pöhls <marcus@futurestud.io>",
   "bugs": {
     "url": "https://github.com/futurestudio/hapi-dev-errors/issues"
   },
-  "contributors": [
-    {
-      "name": "Marcus Poehls",
-      "email": "marcus@futurestud.io"
-    }
-  ],
   "dependencies": {
     "youch": "~2.0.10",
     "youch-terminal": "~1.0.0"
@@ -47,6 +41,7 @@
   ],
   "license": "MIT",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/futurestudio/hapi-dev-errors.git"
