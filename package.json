@@ -50,6 +50,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "lab --assert @hapi/code --leaks --coverage --lint",
-    "prepush": "npm test"
+    "prepush": "npm run lint"
   }
 }
