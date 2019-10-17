@@ -1,6 +1,6 @@
 # Changelog
 
-## Version [3.3.0](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.6...v3.3.0) (2019-10-16)
+## Version [3.3.0](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.6...v3.3.0) (2019-10-17)
 
 ### Added
 - basic TypeScript declarations in `lib/index.d.ts`
