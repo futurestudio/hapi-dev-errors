@@ -11,23 +11,23 @@
     "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
-    "@hapi/boom": "~8.0.1",
-    "@hapi/code": "~8.0.0",
+    "@hapi/boom": "~9.0.0",
+    "@hapi/code": "~8.0.1",
     "@hapi/hapi": "~18.4.0",
-    "@hapi/joi": "~15.1.1",
-    "@hapi/lab": "~21.0.0",
+    "@hapi/joi": "~17.0.0",
+    "@hapi/lab": "~22.0.3",
     "@hapi/vision": "~5.5.4",
     "eslint": "~6.8.0",
     "eslint-config-standard": "~14.1.0",
-    "eslint-plugin-import": "~2.19.0",
+    "eslint-plugin-import": "~2.19.1",
     "eslint-plugin-node": "~11.0.0",
     "eslint-plugin-promise": "~4.2.1",
     "eslint-plugin-standard": "~4.0.1",
-    "husky": "~4.0.2",
-    "sinon": "~8.0.0"
+    "husky": "~4.0.3",
+    "sinon": "~8.0.4"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=12"
   },
   "homepage": "https://github.com/futurestudio/hapi-dev-errors#readme",
   "keywords": [

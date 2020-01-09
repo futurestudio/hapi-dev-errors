@@ -26,9 +26,9 @@ experiment('hapi-dev-error handles failed response validations', () => {
       method: 'GET',
       config: {
         response: {
-          schema: {
+          schema: Joi.object({
             user: Joi.object().required()
-          }
+          })
         }
       },
       handler: () => {
