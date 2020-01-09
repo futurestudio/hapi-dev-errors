@@ -67,14 +67,14 @@ npm i hapi-dev-errors
 ```
 
 
-### Do you use hapi v17 or v18?
+### Using hapi v17 or v18?
 Use the `3.x` release of `hapi-dev-errors`:
 
 ```bash
 npm i hapi-dev-errors@3
 ```
 
-### Do you use hapi v16 (or lower)?
+### Using hapi v16 (or lower)?
 Use the `1.3.2` release of `hapi-dev-errors` with hapi v16. Later versions are only compatible with hapi v17.
 
 ```bash
