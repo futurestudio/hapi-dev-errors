@@ -48,7 +48,15 @@ Besides the web view, `hapi-dev-errors` prints pretty error details to the termi
 
 
 ## Requirements
-This plugin uses async/await which requires **Node.js v8 or newer**.
+This plugin uses async/await which requires **Node.js v12 or newer**.
+
+
+### Compatibility
+| Major Release | [hapi.js](https://github.com/hapijs/hapi) version | Node.js version |
+| --- | --- | --- |
+| `v4` | `>=19 @hapi/hapi` | `>=12` |
+| `v3` | `>=17 hapi` | `>=8` |
+| `v2` | `>=17 hapi` | `>=8` |
 
 
 ## Installation
@@ -58,6 +66,13 @@ Add `hapi-dev-errors` as a dependency to your project:
 npm i hapi-dev-errors
 ```
 
+
+### Do you use hapi v17 or v18?
+Use the `3.x` release of `hapi-dev-errors`:
+
+```bash
+npm i hapi-dev-errors@3
+```
 
 ### Do you use hapi v16 (or lower)?
 Use the `1.3.2` release of `hapi-dev-errors` with hapi v16. Later versions are only compatible with hapi v17.
