@@ -1,19 +1,6 @@
 language: node_js
+
 node_js:
-  - 8
-  - 10
   - 12
   - 13
   - node
-
-env:
-  - HAPI_VERSION=""
-
-matrix:
-  include:
-    - node_js: "8"
-      env: HAPI_VERSION="@17"
-
-install:
-  - npm install
-  - npm install @hapi/hapi$HAPI_VERSION
