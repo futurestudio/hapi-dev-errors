@@ -1,5 +1,12 @@
 # Changelog
 
+## Version [4.0.0](https://github.com/futurestudio/hapi-dev-errors/compare/v3.3.0...v4.0.0) (2020-01-10)
+
+### Breaking Changes
+- require Node.js v12
+  - this change aligns with the hapi ecosystem requiring Node.js v12 with the release of hapi 19
+
+
 ## Version [3.3.0](https://github.com/futurestudio/hapi-dev-errors/compare/v3.2.6...v3.3.0) (2019-10-17)
 
 ### Added

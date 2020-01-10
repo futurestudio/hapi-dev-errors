@@ -54,7 +54,7 @@ This plugin uses async/await which requires **Node.js v12 or newer**.
 ### Compatibility
 | Major Release | [hapi.js](https://github.com/hapijs/hapi) version | Node.js version |
 | --- | --- | --- |
-| `v4` | `>=19 @hapi/hapi` | `>=12` |
+| `v4` | `>=17 hapi` | `>=12` |
 | `v3` | `>=17 hapi` | `>=8` |
 | `v2` | `>=17 hapi` | `>=8` |
 
