@@ -11,7 +11,7 @@
     "youch-terminal": "~1.0.0"
   },
   "devDependencies": {
-    "@hapi/boom": "~9.0.0",
+    "@hapi/boom": "~9.1.0",
     "@hapi/code": "~8.0.1",
     "@hapi/hapi": "~19.1.0",
     "@hapi/joi": "~17.1.0",
