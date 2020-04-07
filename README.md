@@ -18,7 +18,6 @@
     <a href="https://snyk.io/test/github/futurestudio/hapi-dev-errors"><img src="https://snyk.io/test/github/futurestudio/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-dev-errors" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="Latest Version"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/dm/hapi-dev-errors.svg" alt="Monthly downloads"></a>
-    <a href="https://greenkeeper.io/" rel="nofollow"><img src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" alt="Greenkeeper badge" data-canonical-src="https://badges.greenkeeper.io/futurestudio/hapi-dev-errors.svg" style="max-width:100%;"></a>
   </p>
   <p>
     <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
