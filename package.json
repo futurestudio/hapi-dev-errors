@@ -13,7 +13,7 @@
   "devDependencies": {
     "@hapi/boom": "~9.1.0",
     "@hapi/code": "~8.0.1",
-    "@hapi/hapi": "~19.2.0",
+    "@hapi/hapi": "~20.0.0",
     "@hapi/joi": "~17.1.0",
     "@hapi/lab": "~22.0.3",
     "@hapi/vision": "~6.0.0",
