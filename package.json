@@ -8,23 +8,23 @@
   },
   "dependencies": {
     "youch": "~2.1.1",
-    "youch-terminal": "~1.0.0"
+    "youch-terminal": "~1.0.1"
   },
   "devDependencies": {
     "@hapi/boom": "~9.1.0",
     "@hapi/code": "~8.0.2",
-    "@hapi/hapi": "~20.0.1",
+    "@hapi/hapi": "~20.0.3",
     "@hapi/joi": "~17.1.0",
     "@hapi/lab": "~24.1.0",
     "@hapi/vision": "~6.0.1",
     "eslint": "~7.14.0",
-    "eslint-config-standard": "~16.0.1",
+    "eslint-config-standard": "~16.0.2",
     "eslint-plugin-import": "~2.22.1",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-promise": "~4.2.1",
     "eslint-plugin-standard": "~4.1.0",
     "husky": "~4.3.0",
-    "sinon": "~9.2.0"
+    "sinon": "~9.2.1"
   },
   "engines": {
     "node": ">=12"
