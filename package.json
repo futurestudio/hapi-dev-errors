@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "youch": "~3.2.0",
-    "youch-terminal": "~2.1.0"
+    "youch-terminal": "~2.2.0"
   },
   "devDependencies": {
     "@hapi/boom": "~10.0.0",
