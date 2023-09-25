@@ -7,7 +7,7 @@
     "url": "https://github.com/futurestudio/hapi-dev-errors/issues"
   },
   "dependencies": {
-    "youch": "~3.2.0",
+    "youch": "~3.3.2",
     "youch-terminal": "~2.2.0"
   },
   "devDependencies": {
