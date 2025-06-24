@@ -18,6 +18,7 @@
     <a href="https://snyk.io/test/github/futurestudio/hapi-dev-errors"><img src="https://snyk.io/test/github/futurestudio/hapi-dev-errors/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/futurestudio/hapi-dev-errors" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/v/hapi-dev-errors.svg" alt="Latest Version"></a>
     <a href="https://www.npmjs.com/package/hapi-dev-errors"><img src="https://img.shields.io/npm/dm/hapi-dev-errors.svg" alt="Monthly downloads"></a>
+    <a href="https://dependents.info/futurestudio/hapi-dev-errors"><img src="https://dependents.info/futurestudio/hapi-dev-errors/badge" alt="network dependents" /></a>
   </p>
   <p>
     <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> for updates!</em>
@@ -45,6 +46,11 @@ Besides the web view, `hapi-dev-errors` prints pretty error details to the termi
 
 ![hapi-dev-errors pretty terminal error](media/hapi-dev-errors-on-terminal.png)
 
+## Used by
+
+<a href="https://dependents.info/futurestudio/hapi-dev-errors">
+  <img src="https://dependents.info/futurestudio/hapi-dev-errors/image" alt="users image" />
+</a>
 
 ## Requirements
 This plugin uses async/await which requires **Node.js v12 or newer**.
